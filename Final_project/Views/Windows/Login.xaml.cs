@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Final_project.Views.Windows;
 
 namespace Final_project
 {
@@ -40,8 +41,9 @@ namespace Final_project
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
 
         private void btnquit_Click(object sender, RoutedEventArgs e)

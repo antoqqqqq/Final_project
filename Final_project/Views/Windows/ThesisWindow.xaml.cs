@@ -23,5 +23,11 @@ namespace Final_project.Views.Windows
         {
             InitializeComponent();
         }
+        private void btnLogout(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }

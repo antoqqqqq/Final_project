@@ -30,9 +30,9 @@
             <!--title-->
             <StackPanel Margin="0 120 0 0"
                         VerticalAlignment="Top">
-                <TextBlock FontSize="24"
+                <TextBlock FontSize="26"
                            FontWeight="Light"
-                           Text="Dissertation Management"
+                           Text="Thesis Management"
                            Foreground="#ffffff"
                            TextAlignment="Center"/>
             </StackPanel>
