@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Final_project.Views.Windows
+namespace Final_project.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AccountInfomation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AccountInfomation : UserControl
     {
-        public MainWindow()
+        public AccountInfomation()
         {
             InitializeComponent();
-        }
-        private void btnLogout(object sender, RoutedEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Close();
         }
     }
 }

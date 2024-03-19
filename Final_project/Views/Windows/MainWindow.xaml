@@ -1,0 +1,63 @@
+﻿<Window x:Class="Final_project.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Final_project.Views.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        FontSize="18"
+        FontFamily="{DynamicResource MaterialDesingFont}">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="bdr" Background="#53d2dc"  
+                CornerRadius="10 0 0 10">
+            <Grid Width="auto" Height="auto"
+          Margin ="10 0">
+                <StackPanel>
+                    <Button x:Name="btnThesis" Margin="0 10"
+                            Width="60"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnThesis_click" >
+                        <materialDesign:PackIcon Kind="Archive" Height="30" Width="30" />
+                    </Button>
+                    <Button x:Name="btnThesiscontrol" Margin="0 10"
+                            Width="60"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnCheckThesis_Click">
+                        <materialDesign:PackIcon Kind="ArchiveCog" Height="30" Width="30" />
+                    </Button>
+                    <Button x:Name="btnstudentcontrol" Margin="0 10"
+                            Width="60"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btn_Click">
+                        <materialDesign:PackIcon Kind="AccountEdit" Height="30" Width="30" />
+                    </Button>
+                    <Button x:Name="btnlogout" Margin="0 10"
+                            Width="60"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnLogout">
+                        <materialDesign:PackIcon Kind="Logout" Height="30" Width="30" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1"
+                Background="#ffe3b3"
+                CornerRadius="0 10 10 0">
+        </Border>
+    </Grid>
+</Window>

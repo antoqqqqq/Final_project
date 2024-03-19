@@ -43,11 +43,18 @@
                 CornerRadius="0 10 10 0"
                 MouseDown="Border_mouseDown">
             <Grid>
-                <materialDesign:PackIcon Kind="CloseCircle"
-                                         VerticalAlignment="Top"
-                                         Width="40"
-                                         Height="40"
-                                         HorizontalAlignment="Right" MouseDown="PackIcon_MouseDown"/>
+                <Button VerticalAlignment="Top"
+                        Width="70"
+                        Height="45"
+                        HorizontalAlignment="Right"
+                        Click="btnclose"
+                                                    Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10 10 10 10">
+                    <materialDesign:PackIcon Kind="CloseCircle"
+                                             Width="40"
+                                             Height="40"/>
+                </Button>
+                
                 <StackPanel VerticalAlignment="Center"
                             Margin="75 0">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"                                
@@ -63,7 +70,8 @@
                             Width="120"
                             Height="45"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnlogin_Click"/>
+                            materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnlogin_Click">
+                    </Button>
                     <Button x:Name="btnquit" Content="Quit"
                             Background="#C957bc"
                             Foreground="#ffc872"

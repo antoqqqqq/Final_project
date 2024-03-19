@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Final_project.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for CheckThesisUC.xaml
     /// </summary>
-    public partial class ThesisUC : UserControl
+    public partial class CheckThesisUC : UserControl
     {
-        public ThesisUC()
+        public CheckThesisUC()
         {
             InitializeComponent();
         }

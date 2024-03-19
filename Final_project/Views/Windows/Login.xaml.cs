@@ -50,5 +50,11 @@ namespace Final_project
         {
             this.Close();
         }
+
+        private void btnclose(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
