@@ -25,15 +25,6 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <StackPanel Orientation="Horizontal" >
-                        <Button 
-                    Height="35"
-                    Width="60"
-                    Margin="20 0 0 0"
-                    HorizontalAlignment="Left"
-                    Background="#8B8000"
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                            <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
-                        </Button>
                         <!--<Button
                     Height="35"
                     Width="60"
@@ -81,7 +72,15 @@
                                     Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-
+                                <Button 
+                                    Height="35"
+                                    Width="60"
+                                    Margin="20 0 0 0"
+                                    HorizontalAlignment="Left"
+                                    Background="#8B8000"
+                                    Style="{StaticResource MaterialDesignIconButton}">
+                                    <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

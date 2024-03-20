@@ -50,7 +50,7 @@
                         Click="btnclose"
                                                     Style="{StaticResource MaterialDesignFlatButton}"
                             materialDesign:ButtonAssist.CornerRadius="10 10 10 10">
-                    <materialDesign:PackIcon Kind="CloseCircle"
+                    <materialDesign:PackIcon Kind="Close"
                                              Width="40"
                                              Height="40"/>
                 </Button>

@@ -51,25 +51,24 @@
                 Grid.Column="0"
                 Margin="5 5 5 20"
                 materialDesign:HintAssist.Hint="Thesis ID"
-                Text="{Binding ID}"
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.FloatingOffset="0,-20"
-                IsReadOnly="True" />
+                IsReadOnly="True" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="5 5 5 20"
                 MaxLength="100"
                 materialDesign:HintAssist.Hint="Thesis name"
-                Text="{Binding Name}"
                 AcceptsReturn="False"
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" />
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox
                 Grid.Row="1"
                 Grid.Column="0"
@@ -81,7 +80,8 @@
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" />
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <ComboBox
                 Grid.Row="1"
                 Grid.Column="1"
@@ -89,11 +89,8 @@
                 SelectedValue="{Binding Gender}"
                 SelectedValuePath="Content"
                 materialDesign:HintAssist.Hint="Course"
-                Text="{Binding Gender}"
-                Style="{StaticResource MaterialDesignOutlinedComboBox}">
-                <ComboBoxItem Content="Nam" />
-                <ComboBoxItem Content="Nữ" />
-                <ComboBoxItem Content="Khác" />
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                materialDesign:HintAssist.FloatingOffset="0,-22">
             </ComboBox>
             <DatePicker
                 Grid.Row="2"
@@ -111,12 +108,10 @@
                 Margin="5 5 5 20"
                 MaxLength="255"
                 materialDesign:HintAssist.Hint="Detail"
-                Text="{Binding Address}"
-                AcceptsReturn="False"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" />
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
         </Grid>
     </Grid>
 </UserControl>
