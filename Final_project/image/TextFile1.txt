@@ -1,0 +1,15 @@
+﻿Đề tài 1: Luận văn
+
+Giáo viên
+Ra đề tài: tên, thể loại (app, web, …), mô tả, công nghệ (mernstack, react….), 
+yêu cầu ( … sinh viên phải chuẩn bị những gì), chức năng(task sẽ hoàn thành), 
+số lượng sv. Thêm, Xoá, Sửa
+Duyệt đề tài hoặc Không: Sinh viên đăng ký → Duyệt or Không
+Giao task cho từng nhóm, theo dõi tiến độ , đánh giá, cho điểm
+Hẹn meeting online vs sinh viên → thông báo
+Thống kê kết quả
+
+Sinh viên
+Tìm kiếm đề tài: theo gv, thể loại, công nghệ… → Chọn → Đăng ký
+Coi task và cập nhật tiến độ, có thể tự tạo task
+Coi thông báo, xem điểm

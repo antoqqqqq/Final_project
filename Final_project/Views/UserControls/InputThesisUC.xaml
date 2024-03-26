@@ -88,20 +88,19 @@
                 Margin="5 5 5 20"
                 SelectedValue="{Binding Gender}"
                 SelectedValuePath="Content"
-                materialDesign:HintAssist.Hint="Course"
+                materialDesign:HintAssist.Hint="Category"
                 Style="{StaticResource MaterialDesignOutlinedComboBox}"
                 materialDesign:HintAssist.FloatingOffset="0,-22">
             </ComboBox>
-            <DatePicker
+            <TextBox
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="5 5 5 20"
-                Text="Format"
-                SelectedDate="{Binding Birthday, StringFormat='dd/MM/yyyy'}"
-                materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
-                materialDesign:HintAssist.FloatingOffset="0,-22"
-                materialDesign:HintAssist.Hint="Due Day"
-                Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                materialDesign:HintAssist.Hint="Technology"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox
                 Grid.Row="2"
                 Grid.Column="1"
@@ -112,6 +111,27 @@
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="5 5 5 20"
+                MaxLength="255"
+                materialDesign:HintAssist.Hint="Require"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="5 5 5 20"
+                MaxLength="255"
+                materialDesign:HintAssist.Hint="function"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto" 
+                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+            
         </Grid>
     </Grid>
 </UserControl>

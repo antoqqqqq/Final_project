@@ -31,37 +31,41 @@
                             HorizontalAlignment="Left"
                             Background="#8B8000"
                             Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                                <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
+                            <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
                         </Button>
-                        <!--<Button
-                            Height="35"
-                            Width="60"
-                            Margin="20 0 0 0"
-                            HorizontalAlignment="Left"
-                            Background="LightBlue"
-                            Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                            <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
-                        </Button>
-                        <Button
-                            Height="35"
-                            Width="60"
-                            Margin="20 0 0 0"
-                            HorizontalAlignment="Left"
-                            Background="#d50000"                      
-                            Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                                <materialDesign:PackIcon Kind="ArchiveOff" Height="25" Width="30" />
-                        </Button>-->
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="1" HorizontalAlignment="Right">
+                <Grid Grid.Column="1" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel> 
+                        
                     <TextBox Grid.Column="2"
-                             Margin="20 5"
+                             Margin="20 0"
                              materialDesign:TextFieldAssist.PrefixText="ID: "
                              Text="{Binding TextToSearch }"
                              materialDesign:HintAssist.Hint="Find Thesis"
                              Style="{StaticResource MaterialDesignOutlinedTextBox}"
                              materialDesign:HintAssist.FloatingOffset="0,-20"
-                             Width="200"/>
+                             Width="200" Height="50" />
+                        <TextBox Grid.Column="2"
+                             Margin="20 5"
+                             materialDesign:TextFieldAssist.PrefixText="ID: "
+                             Text="{Binding TextToSearch }"
+                             materialDesign:HintAssist.Hint="Catelory"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                             materialDesign:HintAssist.FloatingOffset="0,-20"
+                             Width="200" Height="50"/>
+                        </StackPanel>
+                        <Button 
+    Grid.Column="1"
+    Height="35"
+    Width="60"
+    Margin="20 0 0 0"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignIconButton}">
+                            <materialDesign:PackIcon Kind="FileFind" Foreground="Teal" Height="25" Width="30" />
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Grid>
             
@@ -82,13 +86,13 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button 
+                                    Grid.Column="1"
                                     Height="35"
                                     Width="60"
                                     Margin="20 0 0 0"
                                     HorizontalAlignment="Left"
-                                    Background="#8B8000"
                                     Style="{StaticResource MaterialDesignIconButton}">
-                                    <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
+                                    <materialDesign:PackIcon Kind="PenAdd" Foreground="Teal" Height="25" Width="30" />
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

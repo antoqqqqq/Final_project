@@ -1,5 +1,4 @@
-﻿using Final_project.ViewModels.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +15,13 @@ using System.Windows.Shapes;
 namespace Final_project.Views.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window1 : Window
     {
-        public MainWindow()
+        public Window1()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new MainWindowViewModel();
-
         }
-
-        public MainWindowViewModel ViewModel { get; private set; }
     }
 }

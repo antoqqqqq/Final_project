@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Final_project.ViewModels.Windows;
 using Final_project.Views.Windows;
 
 namespace Final_project
@@ -21,40 +22,12 @@ namespace Final_project
     /// </summary>
     public partial class Login : Window
     {
+        public LoginViewModel ViewModel { get; set; }
         public Login()
         {
             InitializeComponent();
+            this.DataContext = ViewModel = new LoginViewModel();
         }
 
-        private void Border_mouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(e.ChangedButton ==MouseButton.Left)
-            {
-                this.DragMove();
-            }
-        }
-
-        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void btnquit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnclose(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-
-        }
     }
 }
