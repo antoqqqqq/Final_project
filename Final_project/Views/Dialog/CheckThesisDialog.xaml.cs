@@ -18,7 +18,7 @@ namespace Final_project.Views.Dialog
     /// <summary>
     /// Interaction logic for CheckThesisDialog.xaml
     /// </summary>
-    public partial class CheckThesisDialog : UserControl
+    public partial class CheckThesisDialog : Window
     {
         public CheckThesisDialog()
         {

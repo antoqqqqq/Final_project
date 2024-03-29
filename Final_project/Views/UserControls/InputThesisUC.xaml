@@ -43,33 +43,29 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
-            <TextBox
+            <TextBox Name="btnThesisid"
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="5 5 5 20"
                 materialDesign:HintAssist.Hint="Thesis ID"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"                VerticalScrollBarVisibility="Auto"
                 IsReadOnly="True" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox
-                Grid.Row="0"
+            <TextBox Name="btnThesisname"
+                Grid.Row="0" 
                 Grid.Column="1"
                 Margin="5 5 5 20"
                 MaxLength="100"
                 materialDesign:HintAssist.Hint="Thesis name"
                 AcceptsReturn="False"
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox
+            <TextBox Name="txtteacher"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="5 5 5 20"
@@ -78,56 +74,58 @@
                 Text="{Binding IdentifyCard}"
                 AcceptsReturn="False"
                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <ComboBox
+            <ComboBox Name="cbbCategory"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="5 5 5 20"
                 SelectedValue="{Binding Gender}"
                 SelectedValuePath="Content"
                 materialDesign:HintAssist.Hint="Category"
-                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                 materialDesign:HintAssist.FloatingOffset="0,-22">
             </ComboBox>
-            <TextBox
+            <TextBox Name="txtTechnology"
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="5 5 5 20"
+                MaxLength="255"
                 materialDesign:HintAssist.Hint="Technology"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox
+            <TextBox Name="txtNumberofpartner"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="5 5 5 20"
-                MaxLength="255"
-                materialDesign:HintAssist.Hint="Detail"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                materialDesign:HintAssist.Hint="Number Of Partner"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox
+            <TextBox Name="txtRequire"
+                Height="94.170703125"
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="5 5 5 20"
                 MaxLength="255"
                 materialDesign:HintAssist.Hint="Require"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox
+            <TextBox Name="txtFunction"
+                Height="94.170703125"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="5 5 5 20"
                 MaxLength="255"
                 materialDesign:HintAssist.Hint="function"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>

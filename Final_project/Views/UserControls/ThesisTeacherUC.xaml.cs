@@ -1,4 +1,6 @@
 ﻿using System.Windows.Controls;
+using Final_project.Views.Dialog;
+using MaterialDesignThemes.Wpf;
 
 namespace Final_project.Views.UserControls
 {
@@ -10,6 +12,23 @@ namespace Final_project.Views.UserControls
         public ThesisTeacherUC()
         {
             InitializeComponent();
+        }
+
+        private void AddThesisbtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            AddThesisDialog addThesisDialog = new AddThesisDialog();
+            addThesisDialog.ShowDialog();
+        }
+
+        private void UpdateThesisbtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            UpdateThesisDialog updateThesisDialog = new UpdateThesisDialog();
+            updateThesisDialog.ShowDialog();
+        }
+
+        private void DeleteThesisbtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -18,11 +18,22 @@ namespace Final_project.Views.Dialog
     /// <summary>
     /// Interaction logic for AddMissionDialog.xaml
     /// </summary>
-    public partial class AddMissionDialog : UserControl
+    public partial class AddMissionDialog : Window
     {
         public AddMissionDialog()
         {
             InitializeComponent();
+        }
+
+        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Mainwindow_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

@@ -9,13 +9,14 @@
              TextElement.FontSize="13"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
-             mc:Ignorable="d" Width="800" Height="450">
-    <Grid Background="White">
+             mc:Ignorable="d" Width="800" Height="450"
+             >
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
-        <Border Grid.Row="0">
+        <Border Grid.Row="0" CornerRadius="0 10 0 0" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="300" />
@@ -23,31 +24,31 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <StackPanel Orientation="Horizontal" >
-                    <Button
+                    <Button Name="btnAddThesis"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
                         HorizontalAlignment="Left"
                         Background="ForestGreen"                      
-                        Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="AddThesisbtn_Click">
                         <materialDesign:PackIcon Kind="ArchiveAdd" Height="25" Width="30" />
                     </Button>
-                    <Button
+                    <Button Name="btnUpDateThesis"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
                         HorizontalAlignment="Left"
                         Background="LightBlue"                      
-                        Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="UpdateThesisbtn_Click">
                         <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
                     </Button>
-                    <Button
+                    <Button Name="btnDelete"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
                         HorizontalAlignment="Left"
                         Background="#d50000"                      
-                        Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="DeleteThesisbtn_Click">
                             <materialDesign:PackIcon Kind="ArchiveOff" Height="25" Width="30" />
                     </Button>
                     </StackPanel>
@@ -56,56 +57,52 @@
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
 
-                            <TextBox Grid.Column="2"
-         Margin="10 0"
-         materialDesign:TextFieldAssist.PrefixText="ID: "
-         Text="{Binding IDNameThsisSearch }"
-         materialDesign:HintAssist.Hint="Find Thesis"
-         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-         materialDesign:HintAssist.FloatingOffset="0,-20"
-         Width="200" Height="50" />
-                            <TextBox Grid.Column="2"
-         Margin="10 5"
-         materialDesign:TextFieldAssist.PrefixText="ID: "
-         Text="{Binding CategorySearch }"
-         materialDesign:HintAssist.Hint="Catelory"
-         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-         materialDesign:HintAssist.FloatingOffset="0,-20"
-         Width="200" Height="50"/>
+                            <TextBox Grid.Column="2" 
+                                     Name="txtSearchThesisName"
+                                     Margin="10 0"
+                                     materialDesign:HintAssist.Hint="Find Thesis"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Width="200" Height="50" />
+                            <ComboBox Grid.Column="2" 
+                                      Name="txtsearchCategory"
+                                      Margin="10 5"
+                                      materialDesign:HintAssist.Hint="Catelory"
+                                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                      Width="200" Height="50"/>
                         </StackPanel>
                         <StackPanel>
 
-                            <TextBox Grid.Column="2"
-         Margin="10 0"
-         materialDesign:TextFieldAssist.PrefixText="ID: "
-         Text="{Binding TeacherSearch }"
-         materialDesign:HintAssist.Hint="Teacher"
-         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-         materialDesign:HintAssist.FloatingOffset="0,-20"
-         Width="200" Height="50" />
-                            <TextBox Grid.Column="2"
-         Margin="10 5"
-         materialDesign:TextFieldAssist.PrefixText="ID: "
-         Text="{Binding TechnologySearch }"
-         materialDesign:HintAssist.Hint="Technology"
-         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-         materialDesign:HintAssist.FloatingOffset="0,-20"
-         Width="200" Height="50"/>
+                            <TextBox Grid.Column="2" 
+                                     Name="txtTeacher"
+                                     Margin="10 0"
+                                     materialDesign:HintAssist.Hint="Teacher"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Width="200" Height="50" />
+                            <TextBox Grid.Column="2" 
+                                     Name="txtTechnology"
+                                     Margin="10 5"
+                                     materialDesign:HintAssist.Hint="Technology"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Width="200" Height="50"/>
                         </StackPanel>
-                        <Button 
-    Grid.Column="1"
-    Height="35"
-    Width="60"
-    Margin="0 0 0 0"
-    HorizontalAlignment="Left"
-    Style="{StaticResource MaterialDesignIconButton}">
+                        <Button Name="btnsearch"
+                                Grid.Column="1"
+                                Height="35"
+                                Width="60"
+                                Margin="0 0 0 0"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource MaterialDesignIconButton}">
                             <materialDesign:PackIcon Kind="FileFind" Foreground="Teal" Height="25" Width="30" />
                         </Button>
                     </StackPanel>
                 </Grid>
             </Grid>
         </Border>
-        <Grid Grid.Row="1">
+        <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
             <DataGrid         
                 CanUserAddRows="False"
                 AutoGenerateColumns="False"
@@ -131,7 +128,7 @@
                     <DataGridTextColumn Header="Category" IsReadOnly="True" Binding="{Binding Category}" CanUserResize="False" Width="*"  />
                     <DataGridTextColumn Header="Technology" IsReadOnly="True" Binding="{Binding Technology}" CanUserResize="False" Width="*"  />                </DataGrid.Columns>
             </DataGrid>
-        </Grid>
+        </Border>
         
 
     </Grid>

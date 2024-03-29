@@ -18,11 +18,16 @@ namespace Final_project.Views.Dialog
     /// <summary>
     /// Interaction logic for UpdateThesisDialog.xaml
     /// </summary>
-    public partial class UpdateThesisDialog : UserControl
+    public partial class UpdateThesisDialog : Window
     {
         public UpdateThesisDialog()
         {
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

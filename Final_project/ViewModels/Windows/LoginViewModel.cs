@@ -27,7 +27,8 @@ namespace Final_project.ViewModels.Windows
 
         private void ExecuteLoginCommand(Window window)
         {
-
+            MainWindow mainWindow = new MainWindow();
+            window.ShowDialog();
         }
     }
 }

@@ -10,13 +10,13 @@
              TextElement.FontWeight="Regular"
              TextElement.FontSize="13"
              TextOptions.TextFormattingMode="Ideal"
-             TextOptions.TextRenderingMode="Auto">
+             TextOptions.TextRenderingMode="Auto" >
     <Grid Width="900" Background="White" Height="300">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
-        <TextBox
+        <TextBox Name="txtDetailMission"
                 Grid.Column="0"
                 Margin="5 5 5 20"
                 MaxLength="255"
@@ -25,7 +25,7 @@
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-        <Button 
+        <Button Name="btnAddMission"
             Grid.Column="1"
                                     Height="35"
                                     Width="60"

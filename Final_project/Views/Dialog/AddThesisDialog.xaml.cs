@@ -18,11 +18,27 @@ namespace Final_project.Views.Dialog
     /// <summary>
     /// Interaction logic for AddThesisDialog.xaml
     /// </summary>
-    public partial class AddThesisDialog : UserControl
+    public partial class AddThesisDialog : Window
     {
         public AddThesisDialog()
         {
             InitializeComponent();
+        }
+
+        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Mainwindow_MouseMove(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
