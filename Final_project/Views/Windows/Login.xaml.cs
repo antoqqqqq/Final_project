@@ -19,11 +19,13 @@ using Final_project.Views.Windows;
 
 namespace Final_project
 {
+
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
     public partial class Login : Window
     {
+
         public Login()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Final_project
         {
             this.Hide();
             MainWindow mainWindow = new MainWindow();
-            mainWindow.role = 0;
+            mainWindow.role = 1;
             if (mainWindow.role == 0)
             {
                 mainWindow.AccountInfomation.Visibility = Visibility.Hidden;
