@@ -86,7 +86,54 @@
             </Grid>
         </Border>
         <Grid Grid.Row="1">
-            <DataGrid         
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:Thesis Grid.Column="0" Grid.Row="0" x:Name="Thesis1"></local:Thesis>
+            <local:Thesis Grid.Column="1" Grid.Row="0" x:Name="Thesis2"></local:Thesis>
+            <local:Thesis Grid.Column="2" Grid.Row="0" x:Name="Thesis3"></local:Thesis>
+            <local:Thesis Grid.Column="0" Grid.Row="1" x:Name="Thesis4"></local:Thesis>
+            <local:Thesis Grid.Column="1" Grid.Row="1" x:Name="Thesis5"></local:Thesis>
+            <local:Thesis Grid.Column="2" Grid.Row="1" x:Name="Thesis6"></local:Thesis>
+            <local:Thesis Grid.Column="0" Grid.Row="2" x:Name="Thesis7"></local:Thesis>
+            <local:Thesis Grid.Column="1" Grid.Row="2" x:Name="Thesis8"></local:Thesis>
+            <local:Thesis Grid.Column="2" Grid.Row="2" x:Name="Thesis9"></local:Thesis>
+            <Button Name="btnprevius"
+                    Grid.Column="0" Grid.Row="3"
+                    Height="35"
+                    Width="60"
+                    Margin="0 0 0 0"
+                    HorizontalAlignment="Right"
+                    ToolTip="Search"
+                    Style="{StaticResource MaterialDesignIconButton}" Click="btnprevius_Click">
+                <materialDesign:PackIcon Kind="ArrowLeftBold" />
+            </Button>
+            <Button Name="btnforward"
+                    Grid.Column="2" Grid.Row="3"
+                    Height="35"
+                    Width="60"
+                    Margin="0 0 0 0"
+                    HorizontalAlignment="Left"
+                    ToolTip="Search"
+                    Style="{StaticResource MaterialDesignIconButton}" Click="btnforward_Click">
+                <materialDesign:PackIcon Kind="ArrowRightBold" />
+            </Button>
+            <TextBlock  Grid.Column="1" Grid.Row="3" Name="txbPageNumber"
+FontWeight="Bold"
+FontSize="20"
+Foreground="Teal"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+Text="1"/>
+            <!--<DataGrid         
                 CanUserAddRows="False"
                 AutoGenerateColumns="False"
                 Background="White"
@@ -101,7 +148,7 @@
                     <DataGridTextColumn Header="Category" IsReadOnly="True" Binding="{Binding Category}" CanUserResize="False" Width="*"  />
                     <DataGridTextColumn Header="Technology" IsReadOnly="True" Binding="{Binding Technology}" CanUserResize="False" Width="*"  />
                 </DataGrid.Columns>
-            </DataGrid>
+            </DataGrid>-->
         </Grid>
     </Grid>
 </UserControl>

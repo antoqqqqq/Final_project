@@ -27,6 +27,7 @@ namespace Final_project.Views.Windows
             InitializeComponent();
         }
 
+
         private void Mainwindow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
