@@ -12,84 +12,106 @@
              TextOptions.TextRenderingMode="Auto"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
+    <Grid  >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0">
+        <Border Grid.Row="0" CornerRadius="0 10 0 0" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="400"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <StackPanel Orientation="Horizontal" >
-                        <!--<Button
-                    Height="35"
-                    Width="60"
-                    Margin="20 0 0 0"
-                    HorizontalAlignment="Left"
-                    Background="LightBlue"
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                    <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
-                </Button>
-                <Button
-                    Height="35"
-                    Width="60"
-                    Margin="20 0 0 0"
-                    HorizontalAlignment="Left"
-                    Background="#d50000"                      
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                        <materialDesign:PackIcon Kind="ArchiveOff" Height="25" Width="30" />
-                </Button>-->
+                        <Button Name="btnCheckThesis"
+                            Height="35"
+                            Width="60"
+                            Margin="20 0 0 0"
+                            HorizontalAlignment="Left"
+                            Background="#8B8000"
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                            <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
+                        </Button>
+                        <Button Name="btnAddRegisterThesis"
+                        Height="35"
+                        Width="60"
+                        Margin="20 0 0 0"
+                        HorizontalAlignment="Left"
+                        Background="ForestGreen"                      
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                            <materialDesign:PackIcon Kind="ArchiveCheck" Height="25" Width="30" />
+                        </Button>
+                        <Button Name="btnGiveTaskThesis"
+                        Height="35"
+                        Width="60"
+                        Margin="20 0 0 0"
+                        HorizontalAlignment="Left"
+                        Background="LightBlue"                      
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}" >
+                            <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
+                        </Button>
+                        <Button Name="btnGiveMeetingThesis"
+                        Height="35"
+                        Width="60"
+                        Margin="20 0 0 0"
+                        HorizontalAlignment="Left"
+                        Background="OrangeRed"                      
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}" >
+                            <materialDesign:PackIcon Kind="LaptopAccount" Height="25" Width="30" />
+                        </Button>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="1" HorizontalAlignment="Right">
-                    <TextBox Grid.Column="2"
-                     Margin="20 5"
-                     materialDesign:TextFieldAssist.PrefixText="ID: "
-                     Text="{Binding TextToSearch }"
-                     materialDesign:HintAssist.Hint="Find Thesis"
-                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                     materialDesign:HintAssist.FloatingOffset="0,-20"
-                     Width="200"/>
+                <Grid Grid.Column="1" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+
+                            <TextBox Grid.Column="2"
+                             Margin="20 0"
+                             materialDesign:TextFieldAssist.PrefixText="ID: "
+                             Text="{Binding TextToSearch }"
+                             materialDesign:HintAssist.Hint="Find Thesis"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                             materialDesign:HintAssist.FloatingOffset="0,-20"
+                             Width="200" Height="50" />
+                            <TextBox Grid.Column="2"
+                             Margin="20 5"
+                             materialDesign:HintAssist.Hint="Catelory"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                             materialDesign:HintAssist.FloatingOffset="0,-20"
+                             Width="200" Height="50"/>
+                        </StackPanel>
+                        <Button 
+    Grid.Column="1"
+    Height="35"
+    Width="60"
+    Margin="20 0 0 0"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignIconButton}">
+                            <materialDesign:PackIcon Kind="FileFind" Foreground="Teal" Height="25" Width="30" />
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Grid>
 
         </Border>
-        <Grid Grid.Row="1">
-            <DataGrid CanUserAddRows="False"
-                      AutoGenerateColumns="False"
-                      Margin="5"
-                      ItemsSource="{Binding SearchedEmployees}"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top">
+        <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
+            <DataGrid
+                CanUserAddRows="False"
+                AutoGenerateColumns="False"
+                Margin="5"
+                ItemsSource="{Binding SearchedEmployees}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Operations" 
-                                    CanUserResize="False" 
-                                    IsReadOnly="True"
-                                    Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button 
-                                    Height="35"
-                                    Width="60"
-                                    Margin="20 0 0 0"
-                                    HorizontalAlignment="Left"
-                                    Style="{StaticResource MaterialDesignIconButton}">
-                                    <materialDesign:PackIcon Kind="ArchiveEye" Height="25" Width="30" />
-                                </Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Thesis ID" IsReadOnly="True" Binding="{Binding ID}" CanUserResize="False" Width="*" />
                     <DataGridTextColumn Header="Thesis Name" IsReadOnly="True" Binding="{Binding Name}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Progress" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
+                    <DataGridTextColumn Header="Leader ID" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
                     <DataGridTextColumn Header="Due day" IsReadOnly="True" Binding="{Binding Dueday, StringFormat='dd/MM/yyyy'}" CanUserResize="False" Width="*"  />
 
                 </DataGrid.Columns>
             </DataGrid>
-        </Grid>
+        </Border>
     </Grid>
 </UserControl>
