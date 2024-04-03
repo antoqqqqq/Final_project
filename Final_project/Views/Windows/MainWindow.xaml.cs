@@ -1,5 +1,4 @@
-﻿using Final_project.ViewModels.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +21,7 @@ namespace Final_project.Views.Windows
     public partial class MainWindow : Window
     {
         public int role;
+        public string username;
         public MainWindow()
         {
             InitializeComponent();
@@ -91,9 +91,6 @@ namespace Final_project.Views.Windows
 
         }
 
-        private void ThesisTeacherUC_Loaded(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

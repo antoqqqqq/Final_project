@@ -12,7 +12,6 @@
         Background="Transparent"
         ResizeMode="NoResize"
         FontSize="18"
-        DataContext="{StaticResource Login}"
         FontFamily="{DynamicResource MaterialDesingFont}" MouseDown="LoginWindow_MouseDown">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>

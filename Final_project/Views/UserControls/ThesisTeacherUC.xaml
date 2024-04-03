@@ -24,25 +24,25 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <StackPanel Orientation="Horizontal" >
-                    <Button Name="btnAddThesis"
+                        <Button Name="btnAddThesis"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
                         HorizontalAlignment="Left"
                         Background="ForestGreen"                      
                         Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="AddThesisbtn_Click">
-                        <materialDesign:PackIcon Kind="ArchiveAdd" Height="25" Width="30" />
-                    </Button>
-                    <Button Name="btnUpDateThesis"
+                            <materialDesign:PackIcon Kind="ArchiveAdd" Height="25" Width="30" />
+                        </Button>
+                        <Button Name="btnUpDateThesis"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
                         HorizontalAlignment="Left"
                         Background="LightBlue"                      
                         Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="UpdateThesisbtn_Click">
-                        <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
-                    </Button>
-                    <Button Name="btnDelete"
+                            <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
+                        </Button>
+                        <Button Name="btnDelete"
                         Height="35"
                         Width="60"
                         Margin="20 0 0 0"
@@ -50,7 +50,7 @@
                         Background="#d50000"                      
                         Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="DeleteThesisbtn_Click">
                             <materialDesign:PackIcon Kind="ArchiveOff" Height="25" Width="30" />
-                    </Button>
+                        </Button>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="1" HorizontalAlignment="Left">
@@ -95,7 +95,7 @@
                                 Width="60"
                                 Margin="0 0 0 0"
                                 HorizontalAlignment="Left"
-                                Style="{StaticResource MaterialDesignIconButton}">
+                                Style="{StaticResource MaterialDesignIconButton}" Click="btnsearch_Click">
                             <materialDesign:PackIcon Kind="FileFind" Foreground="Teal" Height="25" Width="30" />
                         </Button>
                     </StackPanel>
@@ -103,33 +103,16 @@
             </Grid>
         </Border>
         <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
-            <DataGrid         
+            <DataGrid Name="dgrThesis"         
                 CanUserAddRows="False"
-                AutoGenerateColumns="False"
                 Background="White"
-                Margin="5"
-                ItemsSource="{Binding SearchedEmployees}"
+                Margin="5,5,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Operations" 
-                        CanUserResize="False" 
-                        IsReadOnly="True"
-                        Width="auto">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Thesis ID" IsReadOnly="True" Binding="{Binding ID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Thesis Name" IsReadOnly="True" Binding="{Binding Name}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Teacher's Thesis" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Category" IsReadOnly="True" Binding="{Binding Category}" CanUserResize="False" Width="*"  />
-                    <DataGridTextColumn Header="Technology" IsReadOnly="True" Binding="{Binding Technology}" CanUserResize="False" Width="*"  />                </DataGrid.Columns>
+                VerticalAlignment="Top" Height="323" Width="785">
             </DataGrid>
+            
         </Border>
-        
+
 
     </Grid>
 </UserControl>

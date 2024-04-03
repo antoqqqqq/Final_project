@@ -14,7 +14,6 @@
         ResizeMode="NoResize"
         FontSize="18"
         Name="Mainwindow"
-        DataContext="{StaticResource MainVM}"
         FontFamily="{DynamicResource MaterialDesingFont}" MouseDown="Mainwindow_MouseDown">
     <Grid >
         <Grid.ColumnDefinitions>
@@ -74,7 +73,7 @@
                 <local:CheckDuringThesisUC x:Name="CheckDuringThesisUC"></local:CheckDuringThesisUC>
                 <local:ThesisStudentUC x:Name="ThesisStudentUC"></local:ThesisStudentUC>
                 <local:AccountInfomation x:Name="AccountInfomation"></local:AccountInfomation>
-                <local:ThesisTeacherUC x:Name="ThesisTeacherUC" Loaded="ThesisTeacherUC_Loaded"></local:ThesisTeacherUC>
+                <local:ThesisTeacherUC x:Name="ThesisTeacherUC"></local:ThesisTeacherUC>
             </Grid>
         </Border>
     </Grid>

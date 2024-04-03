@@ -14,7 +14,6 @@
         ResizeMode="NoResize"
         FontSize="18"
         Name="Mainwindow"
-        DataContext="{StaticResource MainVM}"
         FontFamily="{DynamicResource MaterialDesingFont}" >
     <Border  CornerRadius="10 10 10 10">
         <Grid Margin="10">
@@ -36,7 +35,7 @@
                 Foreground="Teal"
                 HorizontalAlignment="Center"
                 Text="New Thesis"/>
-                <uc:InputThesisUC>
+                <uc:InputThesisUC x:Name="InputThesisUC">
                     
                 </uc:InputThesisUC>
                 <Button Name="btnAddThesis"
@@ -46,7 +45,7 @@
                     Margin="10"
                     Content="Add"
                     Background="Teal"
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}"/>
+                    Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="btnAddThesis_Click"/>
             </StackPanel>
         </Grid>
     </Border>

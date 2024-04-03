@@ -45,15 +45,16 @@
                 <RowDefinition/>
                 <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
-            <TextBox Name="btnThesisid"
+            <TextBox Name="txtThesisID"
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="5 5 5 20"
+                MaxLength="10"
                 materialDesign:HintAssist.Hint="Thesis ID"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"                VerticalScrollBarVisibility="Auto"
-                IsReadOnly="True" 
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalScrollBarVisibility="Auto"
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox Name="btnThesisname"
+            <TextBox Name="txtThesisName"
                 Grid.Row="0" 
                 Grid.Column="1"
                 Margin="5 5 5 20"
@@ -78,16 +79,14 @@
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <ComboBox Name="cbbCategory"
+            <TextBox Name="cbbCategory"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="5 5 5 20"
-                SelectedValue="{Binding Gender}"
-                SelectedValuePath="Content"
                 materialDesign:HintAssist.Hint="Category"
-                Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 materialDesign:HintAssist.FloatingOffset="0,-22">
-            </ComboBox>
+            </TextBox>
             <TextBox Name="txtTechnology"
                 Grid.Row="2"
                 Grid.Column="0"

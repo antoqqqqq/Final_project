@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_project.Ado_NET.DAO.Dialog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace Final_project.Views.Dialog
     /// </summary>
     public partial class UpdateThesisDialog : Window
     {
+        BL_UpdateThesisDialog db=new BL_UpdateThesisDialog();
+        private string err=string.Empty;
+
         public UpdateThesisDialog()
         {
             InitializeComponent();
@@ -28,6 +32,14 @@ namespace Final_project.Views.Dialog
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnUpdateThesis_Click(object sender, RoutedEventArgs e)
+        {
+            db.EditThesis(UCinputthesis.txtThesisID.Text,UCinputthesis.txtThesisName.Text,
+                UCinputthesis.txtteacher.Text,UCinputthesis.cbbCategory.Text,
+                UCinputthesis.txtTechnology.Text,UCinputthesis.txtNumberofpartner.Text,
+                UCinputthesis.txtRequire.Text,UCinputthesis.txtFunction.Text, ref err);
         }
     }
 }

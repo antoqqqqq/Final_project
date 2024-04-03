@@ -33,7 +33,7 @@
                 Foreground="Teal"
                 HorizontalAlignment="Center"
                 Text="Update Thesis"/>
-                <uc:InputThesisUC/>
+                <uc:InputThesisUC x:Name="UCinputthesis"/>
                 <Button Name="btnUpdateThesis"
                     HorizontalAlignment="Center"
                     Width="100"
@@ -42,7 +42,7 @@
                     Content="Update"
                     Background="Teal"
                     Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                    ToolTip="Update Thesis"/>
+                    ToolTip="Update Thesis" Click="btnUpdateThesis_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Final_project.Ado_NET.DAO.Dialog;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,9 @@ namespace Final_project.Views.Dialog
     /// </summary>
     public partial class AddThesisDialog : Window
     {
+        BL_AddThesisDialog db= new BL_AddThesisDialog();
+        private string error = string.Empty;
+
         public AddThesisDialog()
         {
             InitializeComponent();
@@ -39,6 +44,21 @@ namespace Final_project.Views.Dialog
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void btnAddThesis_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                db.addNewRow(InputThesisUC.txtThesisID.Text, InputThesisUC.txtThesisName.Text,
+                    InputThesisUC.txtteacher.Text,InputThesisUC.cbbCategory.Text,
+                    InputThesisUC.txtTechnology.Text,InputThesisUC.txtNumberofpartner.Text,
+                    InputThesisUC.txtRequire.Text,InputThesisUC.txtFunction.Text, ref error);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show(error);
+            }
         }
     }
 }

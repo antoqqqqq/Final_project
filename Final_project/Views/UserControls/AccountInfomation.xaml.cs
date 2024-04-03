@@ -24,5 +24,10 @@ namespace Final_project.Views.UserControls
         {
             InitializeComponent();
         }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_project.ViewModels.UserControls
+namespace Final_project.DAO.Windows
 {
-    internal class CheckThesisUCViewModel
+    class MainWindow
     {
     }
 }

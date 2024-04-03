@@ -13,8 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Final_project.ViewModels.Windows;
 using Final_project.Views.UserControls;
+using Final_project.DAO.Windows;
 using Final_project.Views.Windows;
 
 namespace Final_project
@@ -28,32 +28,51 @@ namespace Final_project
         {
             InitializeComponent();
         }
-
+        BL_Login db = new BL_Login();
+        string err =string.Empty;
+        int Role;
+        string username = string.Empty;
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.role = 0;
-            if (mainWindow.role == 0)
+            try
             {
-                mainWindow.AccountInfomation.Visibility = Visibility.Hidden;
-                mainWindow.CheckThesisUC.Visibility = Visibility.Hidden;
-                mainWindow.CheckDuringThesisUC.Visibility = Visibility.Hidden;
-                mainWindow.ThesisStudentUC.Visibility = Visibility.Hidden;
-                mainWindow.ThesisTeacherUC.Visibility = Visibility.Visible;
+                Role =int.Parse(db.CheckLogin(txtUsername.Text, txtPassword.Password, ref err));
+            } catch (Exception ex) { err = ex.Message; }
+            if (Role==0)
+            {
+                this.Hide();
+                Views.Windows.MainWindow mainWindow = new Views.Windows.MainWindow();
+                mainWindow.role = Role;
+                    mainWindow.AccountInfomation.Visibility = Visibility.Hidden;
+                    mainWindow.CheckThesisUC.Visibility = Visibility.Hidden;
+                    mainWindow.CheckDuringThesisUC.Visibility = Visibility.Hidden;
+                    mainWindow.ThesisStudentUC.Visibility = Visibility.Hidden;
+                    mainWindow.ThesisTeacherUC.Visibility = Visibility.Visible;
+                mainWindow.username=txtUsername.Text;
+
+                mainWindow.ShowDialog();
+                this.Show();
+                this.txtUsername.Text = "";
+                this.txtPassword.Password = "";
             }
-            else
+            else if(Role == 1)
             {
+                this.Hide();
+                Views.Windows.MainWindow mainWindow = new Views.Windows.MainWindow();
+                mainWindow.role = 1;
                 mainWindow.AccountInfomation.Visibility = Visibility.Hidden;
                 mainWindow.CheckThesisUC.Visibility = Visibility.Hidden;
                 mainWindow.CheckDuringThesisUC.Visibility = Visibility.Hidden;
                 mainWindow.ThesisStudentUC.Visibility = Visibility.Visible;
                 mainWindow.ThesisTeacherUC.Visibility = Visibility.Hidden;
+                mainWindow.ShowDialog();
+                this.Show();
+                this.txtUsername.Text = "";
+                this.txtPassword.Password = "";
+                mainWindow.username = txtUsername.Text;
             }
-            mainWindow.ShowDialog();
-            this.Show();
-            this.txtUsername.Text = "";
-            this.txtPassword.Password = "";
+            else { MessageBox.Show(err); }
+
         }
 
         private void btnquit_Click(object sender, RoutedEventArgs e)

@@ -15,7 +15,6 @@
         ResizeMode="NoResize"
         FontSize="18"
         Name="Mainwindow"
-        DataContext="{StaticResource MainVM}"
         FontFamily="{DynamicResource MaterialDesingFont}" MouseDown="Mainwindow_MouseDown">
     <Grid Background="White">
         <StackPanel>

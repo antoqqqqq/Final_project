@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_project.ViewModels.UserControls
+namespace Final_project.Ado_NET.DAO.UserControls
 {
-    internal class AccountInfoUCViewModel
+    class BL_ThesisStudentUC
     {
     }
 }
