@@ -22,15 +22,15 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <materialDesign:Card 
-                            Width="100"
-                            Height="100" 
+                            Width="80"
+                            Height="80" 
                             Grid.Row="0" 
                             Margin="10">
-                <materialDesign:PackIcon
+                <materialDesign:PackIcon 
                             Foreground="Teal"
-                            Width="100"
-                            Height="100"
-                            Kind="AccountCircle" />
+                            Width="80"
+                            Height="80"
+                            Kind="ArchiveSettings" />
             </materialDesign:Card>
 
         </Grid>
@@ -45,7 +45,15 @@
                 <RowDefinition/>
                 <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
+<<<<<<< HEAD
+<<<<<<< HEAD
             <TextBox Name="txtThesisID"
+=======
+            <TextBox Name="txtThesisid"
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
+=======
+            <TextBox Name="txtThesisid"
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="5 5 5 20"
@@ -54,14 +62,21 @@
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      VerticalScrollBarVisibility="Auto"
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
             <TextBox Name="txtThesisName"
+=======
+            <TextBox Name="txtThesisname"
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
+=======
+            <TextBox Name="txtThesisname"
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
                 Grid.Row="0" 
                 Grid.Column="1"
                 Margin="5 5 5 20"
                 MaxLength="100"
                 materialDesign:HintAssist.Hint="Thesis name"
                 AcceptsReturn="False"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
@@ -72,9 +87,7 @@
                 Margin="5 5 5 20"
                 MaxLength="12"
                 materialDesign:HintAssist.Hint="Teacher "
-                Text="{Binding IdentifyCard}"
                 AcceptsReturn="False"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 

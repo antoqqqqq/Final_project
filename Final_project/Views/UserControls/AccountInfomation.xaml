@@ -54,7 +54,6 @@
                 Margin="5 5 5 20"
                 materialDesign:HintAssist.Hint="ID"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"                VerticalScrollBarVisibility="Auto"
-                IsReadOnly="True" 
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
                 <TextBox Name="txtname"
                 Grid.Row="0" 
@@ -63,7 +62,6 @@
                 MaxLength="100"
                 materialDesign:HintAssist.Hint="name"
                 AcceptsReturn="False"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 
@@ -73,10 +71,17 @@
                 Grid.Column="0"
                 Margin="5 5 5 20"
                 MaxLength="12"
+<<<<<<< HEAD
+<<<<<<< HEAD
                 materialDesign:HintAssist.Hint="email "
                 Text="{Binding IdentifyCard}"
+=======
+                materialDesign:HintAssist.Hint="Teacher "
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
+=======
+                materialDesign:HintAssist.Hint="Teacher "
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
                 AcceptsReturn="False"
-                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                 TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" 

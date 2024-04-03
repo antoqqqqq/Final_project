@@ -19,11 +19,13 @@ using Final_project.Views.Windows;
 
 namespace Final_project
 {
+
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
     public partial class Login : Window
     {
+
         public Login()
         {
             InitializeComponent();
@@ -34,7 +36,14 @@ namespace Final_project
         string username = string.Empty;
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             try
+=======
+            this.Hide();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.role = 1;
+            if (mainWindow.role == 0)
+>>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
             {
                 Role =int.Parse(db.CheckLogin(txtUsername.Text, txtPassword.Password, ref err));
             } catch (Exception ex) { err = ex.Message; }
