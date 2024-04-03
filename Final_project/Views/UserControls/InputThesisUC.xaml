@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Final_project.Views.UserControls.InputThesisUC"
+<UserControl x:Class="Final_project.Views.UserControls.InputThesisUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -45,15 +45,8 @@
                 <RowDefinition/>
                 <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <TextBox Name="txtThesisID"
-=======
             <TextBox Name="txtThesisid"
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
-=======
-            <TextBox Name="txtThesisid"
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
+
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="5 5 5 20"
@@ -62,15 +55,8 @@
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      VerticalScrollBarVisibility="Auto"
                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <TextBox Name="txtThesisName"
-=======
+
             <TextBox Name="txtThesisname"
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
-=======
-            <TextBox Name="txtThesisname"
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
                 Grid.Row="0" 
                 Grid.Column="1"
                 Margin="5 5 5 20"

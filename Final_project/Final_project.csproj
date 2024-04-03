@@ -12,17 +12,6 @@
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <PackageReference Include="System.Data.Common" Version="4.3.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-	<PackageReference Include="System.Linq" Version="4.3.0" />
-    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
-    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
-=======
-=======
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
@@ -33,7 +22,6 @@
     <Folder Include="DAO\dialog\" />
     <Folder Include="DBconnection\" />
     <Folder Include="ViewModels\Dialog\" />
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
   </ItemGroup>
 
   <ItemGroup>

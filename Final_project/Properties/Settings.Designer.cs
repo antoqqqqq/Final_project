@@ -38,15 +38,7 @@ namespace Final_project.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-1TC3J13;Initial Catalog=Thesis_mamagement;Integrated Security" +
-<<<<<<< HEAD
-<<<<<<< HEAD
             "=True;Encrypt=True;TrustServerCertificate=True")]
-=======
-            "=True;TrustServerCertificate=True")]
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
-=======
-            "=True;TrustServerCertificate=True")]
->>>>>>> e1c60e7bc1db901804d87489331aa0e4cf8ab45a
         public string Thesis_mamagementConnectionString {
             get {
                 return ((string)(this["Thesis_mamagementConnectionString"]));
