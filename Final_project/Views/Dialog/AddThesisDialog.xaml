@@ -35,9 +35,7 @@
                 Foreground="Teal"
                 HorizontalAlignment="Center"
                 Text="New Thesis"/>
-                <uc:InputThesisUC x:Name="InputThesisUC">
-                    
-                </uc:InputThesisUC>
+                <uc:InputThesisUC x:Name="InputThesisUC"></uc:InputThesisUC>
                 <Button Name="btnAddThesis"
                     HorizontalAlignment="Center"
                     Width="100"

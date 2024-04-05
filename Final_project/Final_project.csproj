@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DBconnection\**" />
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="DBconnection\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="DBconnection\**" />
+    <None Remove="ViewModels\**" />
+    <Page Remove="DBconnection\**" />
+    <Page Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
@@ -20,8 +31,6 @@
 
   <ItemGroup>
     <Folder Include="DAO\dialog\" />
-    <Folder Include="DBconnection\" />
-    <Folder Include="ViewModels\Dialog\" />
   </ItemGroup>
 
   <ItemGroup>

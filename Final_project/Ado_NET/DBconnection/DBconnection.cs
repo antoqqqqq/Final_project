@@ -53,9 +53,9 @@ namespace Final_project.DBConnection
             }
             return f;
         }
-        public string CheckLogin(string query, CommandType ct, ref string error)
+        public string Getparameter(string query,string parametername, CommandType ct, ref string error)
         {
-            string role = string.Empty;
+            string parameter = string.Empty;
             if (conn.State == ConnectionState.Open)
                 conn.Close();
             conn.Open();
@@ -66,7 +66,7 @@ namespace Final_project.DBConnection
                 SqlDataReader reader=comm.ExecuteReader();
                 if (reader.Read())
                 {
-                    role = reader["role_"].ToString();
+                    parameter = reader[parametername].ToString();
                 }
             }
             catch (SqlException ex)
@@ -79,7 +79,7 @@ namespace Final_project.DBConnection
             }
 
 
-            return  role;
+            return  parameter;
         }
     }
 }

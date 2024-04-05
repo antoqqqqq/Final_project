@@ -86,7 +86,7 @@
             </Grid>
         </Border>
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
+            <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -96,8 +96,8 @@
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <local:Thesis Grid.Column="0" Grid.Row="0" x:Name="Thesis1"></local:Thesis>
+            </Grid.RowDefinitions>-->
+            <!--<local:Thesis Grid.Column="0" Grid.Row="0" x:Name="Thesis1"></local:Thesis>
             <local:Thesis Grid.Column="1" Grid.Row="0" x:Name="Thesis2"></local:Thesis>
             <local:Thesis Grid.Column="2" Grid.Row="0" x:Name="Thesis3"></local:Thesis>
             <local:Thesis Grid.Column="0" Grid.Row="1" x:Name="Thesis4"></local:Thesis>
@@ -105,7 +105,7 @@
             <local:Thesis Grid.Column="2" Grid.Row="1" x:Name="Thesis6"></local:Thesis>
             <local:Thesis Grid.Column="0" Grid.Row="2" x:Name="Thesis7"></local:Thesis>
             <local:Thesis Grid.Column="1" Grid.Row="2" x:Name="Thesis8"></local:Thesis>
-            <local:Thesis Grid.Column="2" Grid.Row="2" x:Name="Thesis9"></local:Thesis>
+            <local:Thesis Grid.Column="2" Grid.Row="2" x:Name="Thesis9"></local:Thesis>-->
             <Button Name="btnprevius"
                     Grid.Column="0" Grid.Row="3"
                     Height="35"
@@ -133,7 +133,7 @@ Foreground="Teal"
 HorizontalAlignment="Center"
 VerticalAlignment="Center"
 Text="1"/>
-            <!--<DataGrid         
+            <DataGrid         
                 CanUserAddRows="False"
                 AutoGenerateColumns="False"
                 Background="White"
@@ -141,14 +141,7 @@ Text="1"/>
                 ItemsSource="{Binding SearchedEmployees}"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
-                <DataGrid.Columns>                    
-                    <DataGridTextColumn Header="Thesis ID" IsReadOnly="True" Binding="{Binding ID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Thesis Name" IsReadOnly="True" Binding="{Binding Name}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Teacher's Thesis" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Category" IsReadOnly="True" Binding="{Binding Category}" CanUserResize="False" Width="*"  />
-                    <DataGridTextColumn Header="Technology" IsReadOnly="True" Binding="{Binding Technology}" CanUserResize="False" Width="*"  />
-                </DataGrid.Columns>
-            </DataGrid>-->
+            </DataGrid>
         </Grid>
     </Grid>
 </UserControl>

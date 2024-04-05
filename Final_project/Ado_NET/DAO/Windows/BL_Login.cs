@@ -16,8 +16,8 @@ namespace Final_project.DAO.Windows
         }
         public string CheckLogin(string username, string password, ref string error)
         {
-            string query = "SELECT "+role+" FROM "+tablename+" WHERE "+ primarycl + " = '" + username + "' AND "+ password+" ='" + password + "'";
-            return  db.CheckLogin(query,CommandType.Text,ref error);
+            string query = "SELECT "+role+" FROM "+tablename+" WHERE "+ primarycl + " = '" + username + "' AND "+ password_ + " ='" + password + "'";
+            return  db.Getparameter(query, role, CommandType.Text,ref error);
         }
 
     }

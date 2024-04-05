@@ -50,7 +50,7 @@ namespace Final_project.Views.Dialog
         {
             try
             {
-                db.addNewRow(InputThesisUC.txtThesisID.Text, InputThesisUC.txtThesisName.Text,
+                db.addNewRow(InputThesisUC.txtThesisID.Text, InputThesisUC.txtThesisname.Text,
                     InputThesisUC.txtteacher.Text,InputThesisUC.cbbCategory.Text,
                     InputThesisUC.txtTechnology.Text,InputThesisUC.txtNumberofpartner.Text,
                     InputThesisUC.txtRequire.Text,InputThesisUC.txtFunction.Text, ref error);

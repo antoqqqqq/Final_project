@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Final_project.DAO.Windows
 {
-    class MainWindow
+    class BL_MainWindow
     {
+
     }
 }

@@ -45,7 +45,7 @@
                 <RowDefinition/>
                 <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
-            <TextBox Name="txtThesisid"
+            <TextBox Name="txtThesisID"
 
                 Grid.Row="0"
                 Grid.Column="0"
