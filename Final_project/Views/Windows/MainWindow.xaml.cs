@@ -101,7 +101,7 @@ namespace Final_project.Views.Windows
             AccountInfomation.txtID.Text = info[0];
             AccountInfomation.txtname.Text = info[1];
             AccountInfomation.txtemail.Text = info[2];
-            txbHello.Text = "Hello" + info[1];
+            txbHello.Text = "Hello " + info[1];
         }
 
 

@@ -65,6 +65,7 @@ namespace Final_project
                 mainWindow.ThesisStudentUC.Visibility = Visibility.Hidden;
                 mainWindow.ThesisTeacherUC.Visibility = Visibility.Visible;
                 mainWindow.username=txtUsername.Text;
+                mainWindow.initialControl();
                 mainWindow.ShowDialog();
                 this.Show();
                 setdefauld();
@@ -80,8 +81,9 @@ namespace Final_project
                 mainWindow.CheckDuringThesisUC.Visibility = Visibility.Hidden;
                 mainWindow.ThesisStudentUC.Visibility = Visibility.Visible;
                 mainWindow.ThesisTeacherUC.Visibility = Visibility.Hidden;
-                mainWindow.ShowDialog();
                 mainWindow.username = txtUsername.Text;
+                mainWindow.initialControl();
+                mainWindow.ShowDialog();
                 this.Show();
                 setdefauld();
 

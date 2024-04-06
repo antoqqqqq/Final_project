@@ -29,7 +29,7 @@ namespace Final_project.Views.UserControls
         private void UpdateThesisbtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             
-            UpdateThesisDialog updateThesisDialog = new UpdateThesisDialog();
+            UpdateThesisDialog updateThesisDialog = new UpdateThesisDialog(); //get information
             updateThesisDialog.ShowDialog();
         }
 

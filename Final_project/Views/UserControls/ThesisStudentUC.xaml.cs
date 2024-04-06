@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_project.Ado_NET.DAO.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +23,13 @@ namespace Final_project.Views.UserControls
     {
         private int pagenumber;
         private int maxpage=5;
-
+        BL_ThesisStudentUC db = new BL_ThesisStudentUC();
         public ThesisStudentUC()
         {
             InitializeComponent();
             //btnprevius.IsEnabled = false;
             //pagenumber = int.Parse(txbPageNumber.Text);
+            dgrThesis.ItemsSource = db.getThesis().DefaultView;
         }
 
         //private void btnforward_Click(object sender, RoutedEventArgs e)
