@@ -51,12 +51,13 @@ namespace Final_project
                     }
                 }
                 else { err = "enter full username and login";
-            }
+                    MessageBox.Show(err);
+                }
             } catch { MessageBox.Show(err); }
             if (Role==0)
             {
                 this.Hide();
-                Views.Windows.MainWindow mainWindow = new Views.Windows.MainWindow();
+                Views.Windows.MainWindow mainWindow = new MainWindow();
                 mainWindow.role = Role;
                 mainWindow.AccountInfomation.Visibility = Visibility.Hidden;
                 mainWindow.CheckThesisUC.Visibility = Visibility.Hidden;
@@ -65,7 +66,6 @@ namespace Final_project
                 mainWindow.ThesisTeacherUC.Visibility = Visibility.Visible;
                 mainWindow.username=txtUsername.Text;
                 mainWindow.ShowDialog();
-                mainWindow.username = txtUsername.Text;
                 this.Show();
                 setdefauld();
 

@@ -58,13 +58,14 @@
                     </Button>
                 </StackPanel>
                 <TextBlock
-                Margin=" 10" 
-                FontSize="13"
-                FontWeight="Bold"
-                Foreground="Teal"
-                HorizontalAlignment="Left"
-                Text="Hello teacher" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
-
+                    Name="txbHello"
+                    Margin=" 10" 
+                    FontSize="13"
+                    FontWeight="Bold"
+                    Foreground="Teal"
+                    HorizontalAlignment="Left"
+                    Text="" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+                
             </Grid>
         </Border>
         <Border Grid.Column="1">
@@ -78,3 +79,4 @@
         </Border>
     </Grid>
 </Window>
+    

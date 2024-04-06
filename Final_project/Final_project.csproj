@@ -30,10 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DAO\dialog\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

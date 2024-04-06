@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_project.Ado_NET.DAO.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,7 +22,10 @@ namespace Final_project.Views.Windows
     public partial class MainWindow : Window
     {
         public int role;
-        public string username;
+        public string username = string.Empty;
+        BL_AccountInformation db = new BL_AccountInformation();
+        List<string> info = new List<string>();
+        string err=string.Empty;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +50,7 @@ namespace Final_project.Views.Windows
             CheckDuringThesisUC.Visibility = Visibility.Hidden;
             ThesisStudentUC.Visibility = Visibility.Hidden;
             ThesisTeacherUC.Visibility = Visibility.Hidden;
+            initialControl();
         }
 
         private void btnThesiscontrol_Click(object sender, RoutedEventArgs e)
@@ -89,7 +94,14 @@ namespace Final_project.Views.Windows
         }
         public void initialControl()
         {
-
+            try
+            {
+                info = db.GetAccouninformation(role, username, ref err);
+            } catch  (Exception)  { MessageBox.Show(err); }
+            AccountInfomation.txtID.Text = info[0];
+            AccountInfomation.txtname.Text = info[1];
+            AccountInfomation.txtemail.Text = info[2];
+            txbHello.Text = "Hello" + info[1];
         }
 
 

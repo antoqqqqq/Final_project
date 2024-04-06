@@ -22,17 +22,17 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <materialDesign:Card 
-                            Width="80"
-                            Height="80" 
-                            Grid.Row="0" 
-                            Margin="10">
+                Width="80"
+                Height="80" 
+                Grid.Row="0" 
+                Margin="10">
                 <materialDesign:PackIcon 
-                            Foreground="Teal"
-                            Width="80"
-                            Height="80"
-                            Kind="ArchiveSettings" />
+                    Foreground="Teal"
+                    Width="80"
+                    Height="80"
+                    Kind="ArchiveSettings" />
             </materialDesign:Card>
-
+            
         </Grid>
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -46,87 +46,88 @@
                 <RowDefinition  Height="2*"/>
             </Grid.RowDefinitions>
             <TextBox Name="txtThesisID"
-
-                Grid.Row="0"
-                Grid.Column="0"
-                Margin="5 5 5 20"
-                MaxLength="10"
-                materialDesign:HintAssist.Hint="Thesis ID"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Margin="5 5 5 20"
+                     MaxLength="10"
+                     materialDesign:HintAssist.Hint="Thesis ID"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
-
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
+            
             <TextBox Name="txtThesisname"
-                Grid.Row="0" 
-                Grid.Column="1"
-                Margin="5 5 5 20"
-                MaxLength="100"
-                materialDesign:HintAssist.Hint="Thesis name"
-                AcceptsReturn="False"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Grid.Row="0" 
+                     Grid.Column="1"
+                     Margin="5 5 5 20"
+                     MaxLength="100"
+                     materialDesign:HintAssist.Hint="Thesis name"
+                     AcceptsReturn="False"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox Name="txtteacher"
-                Grid.Row="1"
-                Grid.Column="0"
-                Margin="5 5 5 20"
-                MaxLength="12"
-                materialDesign:HintAssist.Hint="Teacher "
-                AcceptsReturn="False"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     Margin="5 5 5 20"
+                     MaxLength="12"
+                     materialDesign:HintAssist.Hint="Teacher "
+                     AcceptsReturn="False"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox Name="cbbCategory"
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="5 5 5 20"
-                materialDesign:HintAssist.Hint="Category"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                materialDesign:HintAssist.FloatingOffset="0,-22">
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="5 5 5 20"
+                     materialDesign:HintAssist.Hint="Category"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.FloatingOffset="0,-22">
+                
             </TextBox>
             <TextBox Name="txtTechnology"
-                Grid.Row="2"
-                Grid.Column="0"
-                Margin="5 5 5 20"
-                MaxLength="255"
-                materialDesign:HintAssist.Hint="Technology"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Margin="5 5 5 20"
+                     MaxLength="255"
+                     materialDesign:HintAssist.Hint="Technology"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox Name="txtNumberofpartner"
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="5 5 5 20"
-                materialDesign:HintAssist.Hint="Number Of Partner"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Margin="5 5 5 20"
+                     materialDesign:HintAssist.Hint="Number Of Partner"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox Name="txtRequire"
-                Height="94.170703125"
-                Grid.Row="3"
-                Grid.Column="0"
-                Margin="5 5 5 20"
-                MaxLength="255"
-                materialDesign:HintAssist.Hint="Require"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Height="94.170703125"
+                     Grid.Row="3"
+                     Grid.Column="0"
+                     Margin="5 5 5 20"
+                     MaxLength="255"
+                     materialDesign:HintAssist.Hint="Require"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             <TextBox Name="txtFunction"
-                Height="94.170703125"
-                Grid.Row="3"
-                Grid.Column="1"
-                Margin="5 5 5 20"
-                MaxLength="255"
-                materialDesign:HintAssist.Hint="function"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto" 
-                materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                     Height="94.170703125"
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     Margin="5 5 5 20"
+                     MaxLength="255"
+                     materialDesign:HintAssist.Hint="function"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" 
+                     materialDesign:HintAssist.FloatingOffset="0,-22"/>
             
         </Grid>
     </Grid>

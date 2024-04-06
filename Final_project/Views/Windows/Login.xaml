@@ -46,8 +46,8 @@
                         Width="70"
                         Height="45"
                         HorizontalAlignment="Right"
-                                                    Style="{StaticResource MaterialDesignFlatButton}"
-                            materialDesign:ButtonAssist.CornerRadius="10 10 10 10" Click="Button_Click">
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        materialDesign:ButtonAssist.CornerRadius="10 10 10 10" Click="Button_Click">
                     <materialDesign:PackIcon Kind="Close"
                                              Width="40"
                                              Height="40"/>
@@ -69,6 +69,7 @@
                             Height="45"
                             Style="{StaticResource MaterialDesignFlatButton}"
                             materialDesign:ButtonAssist.CornerRadius="20 20 20 20" Click="btnlogin_Click">
+                        
                     </Button>
                     <Button x:Name="btnquit" Content="Quit"
                             Background="#C957bc"
@@ -83,3 +84,4 @@
         </Border>
     </Grid>
 </Window>
+ 

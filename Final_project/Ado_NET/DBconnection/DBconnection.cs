@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Reflection.Metadata;
 namespace Final_project.DBConnection
 {
     public class DBconnection
@@ -81,5 +82,38 @@ namespace Final_project.DBConnection
 
             return  parameter;
         }
+        public List<string> GetRowInfo(string query, CommandType ct, ref string error)
+        {
+            List<string> list = new List<string>();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            comm.CommandText = query;
+            comm.CommandType = ct;
+            try
+            {
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        list.Add(reader[i].ToString());
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return list;
+        }
+
     }
 }
