@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Final_project.Ado_NET.DAO.Dialog;
+using Final_project.Ado_NET.DAO.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,16 @@ namespace Final_project.Views.Dialog
     /// </summary>
     public partial class CheckThesisDialog : Window
     {
+        BL_CheckThesisDialog db = new BL_CheckThesisDialog();
         public CheckThesisDialog()
         {
             InitializeComponent();
+            dgrThesis.ItemsSource= db.getRegister().DefaultView;
+        }
+
+        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

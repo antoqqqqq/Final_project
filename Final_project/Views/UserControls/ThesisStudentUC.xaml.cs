@@ -1,6 +1,8 @@
 ﻿using Final_project.Ado_NET.DAO.UserControls;
+using Final_project.Views.Dialog;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ namespace Final_project.Views.UserControls
     {
         private int pagenumber;
         private int maxpage=5;
+        public string Studentid= string.Empty;
         BL_ThesisStudentUC db = new BL_ThesisStudentUC();
         public ThesisStudentUC()
         {
@@ -34,7 +37,29 @@ namespace Final_project.Views.UserControls
 
         private void btnThesis_Register_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (dgrThesis.SelectedItem != null)
+            {
+                var selectedItem = dgrThesis.SelectedItem as DataRowView;
+                Register_Thesis register_Thesis = new Register_Thesis(Studentid);
+                register_Thesis.InputThesisUC.txtThesisID.Text = selectedItem.Row.ItemArray[0].ToString();//get information
+                register_Thesis.InputThesisUC.txtThesisname.Text = selectedItem.Row.ItemArray[1].ToString();//get information
+                register_Thesis.InputThesisUC.txtteacher.Text = selectedItem.Row.ItemArray[2].ToString();//get information
+                register_Thesis.InputThesisUC.cbbCategory.Text = selectedItem.Row.ItemArray[3].ToString();//get information
+                register_Thesis.InputThesisUC.txtTechnology.Text = selectedItem.Row.ItemArray[4].ToString();//get information
+                register_Thesis.InputThesisUC.txtNumberofpartner.Text = selectedItem.Row.ItemArray[5].ToString();//get information
+                register_Thesis.InputThesisUC.txtRequire.Text = selectedItem.Row.ItemArray[6].ToString();//get information
+                register_Thesis.InputThesisUC.txtFunction.Text = selectedItem.Row.ItemArray[7].ToString();//get information
+                register_Thesis.InputThesisUC.txtThesisID.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtThesisname.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtteacher.IsReadOnly = true;
+                register_Thesis.InputThesisUC.cbbCategory.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtTechnology.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtNumberofpartner.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtRequire.IsReadOnly = true;
+                register_Thesis.InputThesisUC.txtFunction.IsReadOnly = true;
+                register_Thesis.ShowDialog();
+            }
+            else { MessageBox.Show("select thesis want to change"); }
         }
 
         //private void btnforward_Click(object sender, RoutedEventArgs e)

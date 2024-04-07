@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_project.Views.Dialog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Final_project.Views.UserControls
         public CheckThesisUC()
         {
             InitializeComponent();
+        }
+
+        private void btnCheckRegisterThesis_Click(object sender, RoutedEventArgs e)
+        {
+            CheckThesisDialog checkThesisDialog = new CheckThesisDialog();
+            checkThesisDialog.ShowDialog();
         }
     }
 }

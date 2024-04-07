@@ -43,7 +43,9 @@ namespace Final_project.Views.UserControls
                 updateThesisDialog.UCinputthesis.txtTechnology.Text = selectedItem.Row.ItemArray[4].ToString();//get information
                 updateThesisDialog.UCinputthesis.txtNumberofpartner.Text = selectedItem.Row.ItemArray[5].ToString();//get information
                 updateThesisDialog.UCinputthesis.txtRequire.Text = selectedItem.Row.ItemArray[6].ToString();//get information
-                updateThesisDialog.UCinputthesis.txtFunction.Text = selectedItem.Row.ItemArray[6].ToString();//get information
+                updateThesisDialog.UCinputthesis.txtFunction.Text = selectedItem.Row.ItemArray[7].ToString();//get information
+                updateThesisDialog.UCinputthesis.txtThesisID.IsReadOnly=true;
+                updateThesisDialog.UCinputthesis.txtteacher.IsReadOnly=true;
                 updateThesisDialog.ShowDialog();
                 initialcontrol();
             } else { MessageBox.Show("select thesis want to change"); }

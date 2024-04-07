@@ -24,7 +24,7 @@ namespace Final_project.Ado_NET.DAO.Dialog
         public bool addNewRow(string ID, string Topic,string Teacher_id, string Category,string Technology,string numbermember,string require,string function, ref string error)
         {
             string sqlString = "INSERT INTO " + tablename +
-                " VALUES (" + ID + ", " + Topic +", " + Teacher_id + ", " + Category + ", " + Technology + ", " + numbermember + ", " + require +", " + function + ")";
+                " VALUES ('" + ID + "', '" + Topic +"', '" + Teacher_id + "', '" + Category + "', '" + Technology + "', '" + numbermember + "', '" + require +"', '" + function + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
     }

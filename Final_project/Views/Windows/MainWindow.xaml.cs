@@ -28,7 +28,7 @@ namespace Final_project.Views.Windows
         string err=string.Empty;
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
 
@@ -98,6 +98,9 @@ namespace Final_project.Views.Windows
             {
                 info = db.GetAccouninformation(role, username, ref err);
             } catch  (Exception)  { MessageBox.Show(err); }
+            if (role == 1) {
+                ThesisStudentUC.Studentid = info[0];
+            }
             AccountInfomation.txtID.Text = info[0];
             AccountInfomation.txtname.Text = info[1];
             AccountInfomation.txtemail.Text = info[2];

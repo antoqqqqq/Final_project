@@ -55,7 +55,7 @@ namespace Final_project.Views.Dialog
                     InputThesisUC.txtTechnology.Text,InputThesisUC.txtNumberofpartner.Text,
                     InputThesisUC.txtRequire.Text,InputThesisUC.txtFunction.Text, ref error);
             }
-            catch (SqlException)
+            catch (Exception)
             {
                 MessageBox.Show(error);
             }

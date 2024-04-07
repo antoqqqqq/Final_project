@@ -45,6 +45,7 @@ namespace Final_project.Views.Dialog
             }else
             {
                 MessageBox.Show("update completed");
+                Close();
             }
         }
     }
