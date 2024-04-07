@@ -36,10 +36,16 @@ namespace Final_project.Views.Dialog
 
         private void btnUpdateThesis_Click(object sender, RoutedEventArgs e)
         {
-            db.EditThesis(UCinputthesis.txtThesisID.Text,UCinputthesis.txtThesisname.Text,
+            if(!db.EditThesis(UCinputthesis.txtThesisID.Text,UCinputthesis.txtThesisname.Text,
                 UCinputthesis.txtteacher.Text,UCinputthesis.cbbCategory.Text,
                 UCinputthesis.txtTechnology.Text,UCinputthesis.txtNumberofpartner.Text,
-                UCinputthesis.txtRequire.Text,UCinputthesis.txtFunction.Text, ref err);
+                UCinputthesis.txtRequire.Text,UCinputthesis.txtFunction.Text, ref err))
+            {
+                MessageBox.Show(err);
+            }else
+            {
+                MessageBox.Show("update completed");
+            }
         }
     }
 }

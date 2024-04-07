@@ -22,8 +22,8 @@ namespace Final_project.Ado_NET.DAO.Dialog
         public bool EditThesis(string ID, string Topic, string Teacher_id, string Category, string Technology, string numbermember, string require, string function, ref string error)
         {
             string sqlString = "update " + tablename +
-                " set topic=" + Topic + ", teacher_id=" + Teacher_id + ", category=" + Category + ", Technology=" + Technology + ", Number_member=" + numbermember + ", require=" + require + ", Function_contain=" + function + 
-                "where thesis_id="+ID;
+                " set topic='" + Topic + "', teacher_id='" + Teacher_id + "', category='" + Category + "', Technology='" + Technology + "', Number_member=" + numbermember + ", require='" + require + "', Function_contain='" + function + 
+                "'where thesis_id='"+ID+"'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
     }

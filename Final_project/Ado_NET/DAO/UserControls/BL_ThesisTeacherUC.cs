@@ -31,9 +31,9 @@ namespace Final_project.Ado_NET.DAO.UserControls
             dt = ds.Tables[0];
             return dt;
         }
-        public bool deleteThesis(string thesisid)
+        public bool deleteThesis(string thesisid,ref string error)
         {
-            string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = " + thesisid;
+            string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid+"'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
     }

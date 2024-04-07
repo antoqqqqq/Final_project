@@ -32,6 +32,11 @@ namespace Final_project.Views.UserControls
             dgrThesis.ItemsSource = db.getThesis().DefaultView;
         }
 
+        private void btnThesis_Register_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         //private void btnforward_Click(object sender, RoutedEventArgs e)
         //{
         //    if (pagenumber >= 1 && pagenumber<maxpage-1)
