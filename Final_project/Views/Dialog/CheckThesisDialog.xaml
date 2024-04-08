@@ -34,7 +34,7 @@
                                 Margin="20 0 0 0"
                                 HorizontalAlignment="Left"
                                 Background="ForestGreen"                      
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="btnAddThesis_Click">
                             <materialDesign:PackIcon Kind="ArchiveAdd" Height="25" Width="30" />
                         </Button>
                         <Button Name="btnDelete"
@@ -43,7 +43,7 @@
                                 Margin="20 0 0 0"
                                 HorizontalAlignment="Left"
                                 Background="#d50000"                      
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="btnDelete_Click">
                             <materialDesign:PackIcon Kind="ArchiveOff" Height="25" Width="30" />
                         </Button>
                         

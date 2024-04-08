@@ -1,4 +1,5 @@
 ﻿using Final_project.Ado_NET.DAO.Dialog;
+using Final_project.Ado_NET.DAO.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -23,29 +24,26 @@ namespace Final_project.Views.Dialog
     public partial class AddThesisDialog : Window
     {
         BL_AddThesisDialog db= new BL_AddThesisDialog();
+        BL_ThesisTeacherUC bL_ThesisTeacherUC = new BL_ThesisTeacherUC();
         private string error = string.Empty;
 
         public AddThesisDialog()
         {
             InitializeComponent();
+            foreach (var item in bL_ThesisTeacherUC.getCategory())
+            {
+                InputThesisUC.cbbCategory.Items.Add(item);
+            }
         }
-
         private void Closebtn_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void Mainwindow_MouseMove(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
         private void btnAddThesis_Click(object sender, RoutedEventArgs e)
         {
             try

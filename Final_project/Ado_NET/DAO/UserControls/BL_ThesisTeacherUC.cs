@@ -6,6 +6,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using static MaterialDesignThemes.Wpf.Theme;
 using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace Final_project.Ado_NET.DAO.UserControls
@@ -14,6 +16,7 @@ namespace Final_project.Ado_NET.DAO.UserControls
     class BL_ThesisTeacherUC
     {
         string tablename = "Thesis";
+        string category = "Category";
         string primarycl = "username";
         string password_ = "password_";
         string role = "role_";
@@ -30,6 +33,11 @@ namespace Final_project.Ado_NET.DAO.UserControls
             DataSet ds = db.ExecuteQueryDataSet("select * from " + tablename, CommandType.Text);
             dt = ds.Tables[0];
             return dt;
+        }        
+        public List<string> getCategory()
+        {
+            List<string> list = db.GetColumn("select * from " + category, "category", CommandType.Text, ref error);
+            return list;
         }
         public bool deleteThesis(string thesisid,ref string error)
         {

@@ -20,6 +20,10 @@ namespace Final_project.Views.UserControls
         {
             InitializeComponent();
             dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis().DefaultView;
+            foreach (var item in bL_ThesisTeacherUC.getCategory())
+            {
+                cbbsearchCategory.Items.Add(item);
+            }
         }
 
 
@@ -74,14 +78,11 @@ namespace Final_project.Views.UserControls
 
         private void btnsearch_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (txtsearchCategory.Text != "")
-            {
-
-            }
         }
         private void initialcontrol()
         {
             dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis().DefaultView;
+
         }
     }
 }

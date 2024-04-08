@@ -55,8 +55,8 @@
                 </Grid>
                 <Grid Grid.Column="1" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel> 
-                            
+                        <StackPanel>
+
                             <TextBox Grid.Column="2"
                                      Margin="20 0"
                                      materialDesign:TextFieldAssist.PrefixText="ID: "
@@ -65,12 +65,12 @@
                                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Width="200" Height="50" />
-                            <TextBox Grid.Column="2"
+                            <ComboBox Grid.Column="2"
+                                     Name="cbbcategory"
                                      Margin="20 5"
                                      materialDesign:TextFieldAssist.PrefixText="ID: "
-                                     Text="{Binding TextToSearch }"
                                      materialDesign:HintAssist.Hint="Catelory"
-                                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Width="200" Height="50"/>
                         </StackPanel>
@@ -86,23 +86,14 @@
                     </StackPanel>
                 </Grid>
             </Grid>
-            
+
         </Border>
         <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
-            <DataGrid
-                CanUserAddRows="False"
+            <DataGrid Name="dgrThesisinfo"
                 AutoGenerateColumns="False"
-                Margin="5"
-                ItemsSource="{Binding SearchedEmployees}"
+                Margin="5,5,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Thesis ID" IsReadOnly="True" Binding="{Binding ID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Thesis Name" IsReadOnly="True" Binding="{Binding Name}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Leader ID" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Due day" IsReadOnly="True" Binding="{Binding Dueday, StringFormat='dd/MM/yyyy'}" CanUserResize="False" Width="*"  />
-                    
-                </DataGrid.Columns>
+                VerticalAlignment="Top" Height="323" Width="785">
             </DataGrid>
         </Border>
     </Grid>

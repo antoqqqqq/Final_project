@@ -1,4 +1,5 @@
-﻿using Final_project.Views.Dialog;
+﻿using Final_project.Ado_NET.DAO.UserControls;
+using Final_project.Views.Dialog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,22 @@ namespace Final_project.Views.UserControls
     /// </summary>
     public partial class CheckThesisUC : UserControl
     {
+        public string teacherid = string.Empty;
+        BL_CheckThesisUC db = new BL_CheckThesisUC(); 
+        BL_ThesisTeacherUC bL_ThesisTeacherUC = new BL_ThesisTeacherUC();
         public CheckThesisUC()
         {
             InitializeComponent();
+            dgrThesisinfo.ItemsSource = db.getThesisDuring().DefaultView;
+            foreach (var item in bL_ThesisTeacherUC.getCategory())
+            {
+                cbbcategory.Items.Add(item);
+            }
         }
 
         private void btnCheckRegisterThesis_Click(object sender, RoutedEventArgs e)
         {
-            CheckThesisDialog checkThesisDialog = new CheckThesisDialog();
+            CheckThesisDialog checkThesisDialog = new CheckThesisDialog(teacherid);
             checkThesisDialog.ShowDialog();
         }
     }

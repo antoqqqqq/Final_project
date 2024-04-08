@@ -82,6 +82,40 @@ namespace Final_project.DBConnection
 
             return  parameter;
         }
+        public List<string> GetColumn (string query, string column, CommandType ct, ref string error)
+        {
+            List<string> list = new List<string>();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            comm.CommandText = query;
+            comm.CommandType = ct;
+            try
+            {
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string valueToAdd = reader[column].ToString();
+
+                        list.Add(valueToAdd);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return list;
+        }
         public List<string> GetRowInfo(string query, CommandType ct, ref string error)
         {
             List<string> list = new List<string>();

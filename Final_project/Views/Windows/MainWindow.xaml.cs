@@ -100,6 +100,9 @@ namespace Final_project.Views.Windows
             } catch  (Exception)  { MessageBox.Show(err); }
             if (role == 1) {
                 ThesisStudentUC.Studentid = info[0];
+            } else if(role ==0 )
+            {
+                CheckThesisUC.teacherid = info[0];
             }
             AccountInfomation.txtID.Text = info[0];
             AccountInfomation.txtname.Text = info[1];

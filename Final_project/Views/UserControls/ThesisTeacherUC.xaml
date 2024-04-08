@@ -65,7 +65,7 @@
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Width="200" Height="50" />
                             <ComboBox Grid.Column="2" 
-                                      Name="txtsearchCategory"
+                                      Name="cbbsearchCategory"
                                       Margin="10 5"
                                       materialDesign:HintAssist.Hint="Catelory"
                                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"

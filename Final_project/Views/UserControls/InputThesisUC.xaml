@@ -78,15 +78,14 @@
                      TextWrapping="Wrap"
                      VerticalScrollBarVisibility="Auto" 
                      materialDesign:HintAssist.FloatingOffset="0,-22"/>
-            <TextBox Name="cbbCategory"
+            <ComboBox Name="cbbCategory"
                      Grid.Row="1"
                      Grid.Column="1"
                      Margin="5 5 5 20"
                      materialDesign:HintAssist.Hint="Category"
-                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     materialDesign:HintAssist.FloatingOffset="0,-22">
-                
-            </TextBox>
+                     Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                     materialDesign:HintAssist.FloatingOffset="0,-22" Height="47.0853515625">                
+            </ComboBox>
             <TextBox Name="txtTechnology"
                      Grid.Row="2"
                      Grid.Column="0"
