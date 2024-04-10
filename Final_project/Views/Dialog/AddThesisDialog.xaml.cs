@@ -52,6 +52,7 @@ namespace Final_project.Views.Dialog
                     InputThesisUC.txtteacher.Text,InputThesisUC.cbbCategory.Text,
                     InputThesisUC.txtTechnology.Text,InputThesisUC.txtNumberofpartner.Text,
                     InputThesisUC.txtRequire.Text,InputThesisUC.txtFunction.Text, ref error);
+                MessageBox.Show("add compelete");
             }
             catch (Exception)
             {

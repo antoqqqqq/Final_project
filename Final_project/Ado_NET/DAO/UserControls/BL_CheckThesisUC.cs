@@ -25,7 +25,7 @@ namespace Final_project.Ado_NET.DAO.UserControls
         {
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = db.ExecuteQueryDataSet("select " + tablename + ".thesis_id," + tableThesis + ".topic," + tableThesis + ".category," + tablestudent + ".name "+ tablestudent + ".student_id " + "from " + tablename + " join " + tableThesis + " on " + tablename + ".thesis_id =" + tableThesis + ".thesis_id  join Student on "+tablename+".student_id = Student.student_id ", CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select " + tablename + ".thesis_id," + tableThesis + ".topic," + tableThesis + ".category," + tablestudent + ".name ,"+ tablestudent + ".student_id " + "from " + tablename + " join " + tableThesis + " on " + tablename + ".thesis_id =" + tableThesis + ".thesis_id  join Student on "+tablename+".student_id = Student.student_id ", CommandType.Text);
             dt = ds.Tables[0];
             return dt;
         }
