@@ -20,9 +20,12 @@ namespace Final_project.Views.Dialog
     /// </summary>
     public partial class AddMissionDialog : Window
     {
-        public AddMissionDialog()
+        public AddMissionDialog(/*string thesisid,string studentid,string teacherid*/)
         {
             InitializeComponent();
+            //txtStudentid.Text = studentid;
+            //txtteacherid.Text = teacherid;
+            //txtThesisID.Text = thesisid;
         }
 
         private void Closebtn_Click(object sender, RoutedEventArgs e)
@@ -34,6 +37,11 @@ namespace Final_project.Views.Dialog
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
+        }
+
+        private void btnAddMission_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

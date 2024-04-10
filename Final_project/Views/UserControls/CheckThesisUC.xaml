@@ -39,7 +39,7 @@
                                 Margin="20 0 0 0"
                                 HorizontalAlignment="Left"
                                 Background="LightBlue"                      
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}" >
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="btnCreateTaskThesis_Click" >
                             <materialDesign:PackIcon Kind="ArchiveEdit" Height="25" Width="30" />
                         </Button>
                         <Button Name="btnCheckMeetingThesis"
@@ -48,7 +48,7 @@
                                 Margin="20 0 0 0"
                                 HorizontalAlignment="Left"
                                 Background="OrangeRed"                      
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}" >
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="btnCheckMeetingThesis_Click" >
                             <materialDesign:PackIcon Kind="LaptopAccount" Height="25" Width="30" />
                         </Button>
                     </StackPanel>
@@ -90,7 +90,6 @@
         </Border>
         <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
             <DataGrid Name="dgrThesisinfo"
-                AutoGenerateColumns="False"
                 Margin="5,5,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top" Height="323" Width="785">

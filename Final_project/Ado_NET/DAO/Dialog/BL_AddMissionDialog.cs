@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Final_project.Ado_NET.DAO.Dialog
 {
-    class BL_AddMissionDialog
+    public class BL_AddMissionDialog
     {
+
     }
 }

@@ -54,6 +54,35 @@ namespace Final_project.DBConnection
             }
             return f;
         }
+        public bool QueryCanbeRollback(string strSQL, CommandType ct, ref string error)
+        {
+            bool f = false;
+            SqlTransaction transaction = conn.BeginTransaction();
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            comm.Transaction = transaction;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+
+
+                comm.ExecuteNonQuery();
+                f = true;
+                transaction.Commit();
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+                transaction.Rollback();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return f;
+        }
         public string Getparameter(string query,string parametername, CommandType ct, ref string error)
         {
             string parameter = string.Empty;
@@ -85,13 +114,14 @@ namespace Final_project.DBConnection
         public List<string> GetColumn (string query, string column, CommandType ct, ref string error)
         {
             List<string> list = new List<string>();
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
             conn.Open();
             comm.CommandText = query;
             comm.CommandType = ct;
-            try
-            {
+
                 SqlDataReader reader = comm.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -119,13 +149,15 @@ namespace Final_project.DBConnection
         public List<string> GetRowInfo(string query, CommandType ct, ref string error)
         {
             List<string> list = new List<string>();
+
+            try
+            {
             if (conn.State == ConnectionState.Open)
                 conn.Close();
             conn.Open();
             comm.CommandText = query;
             comm.CommandType = ct;
-            try
-            {
+
                 SqlDataReader reader = comm.ExecuteReader();
                 if (reader.Read())
                 {

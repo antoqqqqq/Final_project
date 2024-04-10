@@ -25,7 +25,7 @@ namespace Final_project.Views.Dialog
     {
         BL_CheckThesisDialog db = new BL_CheckThesisDialog();
         string teacher =string.Empty;
-        private string error;
+        private string error=string.Empty;
 
         public CheckThesisDialog(string teacherid)
         {
@@ -44,7 +44,7 @@ namespace Final_project.Views.Dialog
             if (dgrThesis.SelectedItem != null)
             {
                 var selectedItem = dgrThesis.SelectedItem as DataRowView;
-                if(!db.checkThesis(selectedItem[0].ToString(),ref error)){
+                if(!db.AgreeThesis(selectedItem[0].ToString(), teacher, selectedItem[4].ToString(), ref error)){
                     MessageBox.Show(error);
                 }
             }
@@ -58,10 +58,9 @@ namespace Final_project.Views.Dialog
                 if (dgrThesis.SelectedItem != null)
                 {
                     var selectedItem = dgrThesis.SelectedItem as DataRowView;
-                    if (!db.checkThesis(selectedItem[0].ToString(), ref error))
+                    if (!db.RejectThesis(selectedItem[0].ToString(), teacher, selectedItem[4].ToString(), ref error))
                     {
                         MessageBox.Show(error);
-
                     }
                 }
                 else { error="Select 1 register to reject"; }

@@ -39,6 +39,18 @@ namespace Final_project.Views.UserControls
         {
             CheckThesisDialog checkThesisDialog = new CheckThesisDialog(teacherid);
             checkThesisDialog.ShowDialog();
+            dgrThesisinfo.ItemsSource = db.getThesisDuring().DefaultView;
+        }
+
+        private void btnCreateTaskThesis_Click(object sender, RoutedEventArgs e)
+        {
+            AddMissionDialog addMissionDialog = new AddMissionDialog();
+            addMissionDialog.ShowDialog();
+        }
+
+        private void btnCheckMeetingThesis_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
