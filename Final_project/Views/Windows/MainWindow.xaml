@@ -70,11 +70,11 @@
         </Border>
         <Border Grid.Column="1">
             <Grid>
-                <local:CheckThesisUC x:Name="CheckThesisUC" ></local:CheckThesisUC>
-                <local:CheckDuringThesisUC x:Name="CheckDuringThesisUC"></local:CheckDuringThesisUC>
-                <local:ThesisStudentUC x:Name="ThesisStudentUC"></local:ThesisStudentUC>
-                <local:AccountInfomation x:Name="AccountInfomation"></local:AccountInfomation>
-                <local:ThesisTeacherUC x:Name="ThesisTeacherUC"></local:ThesisTeacherUC>
+                <local:CheckThesisUC x:Name="CheckThesisUC" Visibility="Hidden"></local:CheckThesisUC>
+                <local:CheckDuringThesisUC x:Name="CheckDuringThesisUC" Visibility="Hidden"></local:CheckDuringThesisUC>
+                <local:ThesisStudentUC x:Name="ThesisStudentUC" Visibility="Hidden"></local:ThesisStudentUC>
+                <local:AccountInfomation x:Name="AccountInfomation" Visibility="Hidden"></local:AccountInfomation>
+                <local:ThesisTeacherUC  x:Name="ThesisTeacherUC" Visibility="Hidden"></local:ThesisTeacherUC>
             </Grid>
         </Border>
     </Grid>

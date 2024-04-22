@@ -18,7 +18,8 @@ namespace Final_project.Ado_NET.DAO.Dialog
         string tablename = "Thesis_register";
         string tableThesis = "Thesis";
         string tableIfo = "Thesis_info";
-        string tablestudent = "Student";
+        string tablegroups = "groups";
+        string tablegroupstudent = "student_group";
         string tablenotificate = "Notificate";
         string primarycl = "username";
         string password_ = "password_";
@@ -34,26 +35,45 @@ namespace Final_project.Ado_NET.DAO.Dialog
         {
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = db.ExecuteQueryDataSet("select "+tablename+".thesis_id,"+tableThesis+ ".topic," + tableThesis+ ".category,"+ tablestudent+ ".name, "+ tablestudent+ ".student_id " + "from "  + tablename+" join "
-                +tableThesis +" on "+tablename+ ".thesis_id ="+tableThesis+ ".thesis_id  join Student on Thesis_register.student_id = Student.student_id where "+ tablename+".teacher_id='"+ teacherid+"'", CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select "+tablename+".thesis_id,"+tableThesis+ ".topic," + tableThesis
+                + ".category,"+ tablename + ".student,"+ tablename + ".group_id " + "from "  + tablename+" join "
+                +tableThesis +" on "+tablename+ ".thesis_id ="+tableThesis+ ".thesis_id  "+" where " + tablename+".teacher_id='"+ teacherid+"'", CommandType.Text);
             dt = ds.Tables[0];
             return dt;
+        }
+        public bool AgreeThesis(string thesisid, string teacherid, string studentid,string groupname, ref string error)
+        {
 
+            try
+            {   if (db.QueryCheckexist("SELECT COUNT(*) FROM " + tablegroups + " WHERE group_name='" + groupname + "'", CommandType.Text, ref error) != 0)
+                {
+                    string date = DateTime.Now.ToString();
+                    string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid + "' And group_id='" + groupname+ "' And student='" + studentid + "'\n" +
+                         "INSERT INTO " + tablegroupstudent + "( student_id, group_name) VALUES('" + studentid + "', '"+ groupname + "')\n" +
+                         "INSERT INTO " + tableIfo + "(thesis_id, teacher_id, group_name) VALUES('" + thesisid + "', '" + teacherid + "', '" + groupname + "')\n" +
+                         "INSERT INTO " + tablenotificate + " VALUES ('" + studentid + "','" + teacherid + "'," + "TRY_CONVERT(DATETIME, '" + date.ToString() + "', 103)" +
+                         ",'Teacher agree your register in" + thesisid + " at group" + groupname + "')";
+                    return db.QueryCanbeRollback(sqlString, CommandType.Text, ref error);
+                } else  {
+                    int a = int.Parse(db.Getparameter("select Number_member from Thesis Where thesis_id='" + thesisid + "'", "Number_member", CommandType.Text, ref error));
+                    string date = DateTime.Now.ToString();
+                    string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid + "' And group_id='" + groupname + "' And student='" + studentid + "'\n" +
+                         "INSERT INTO " + tablegroups + " VALUES('" + groupname + "', '" + a + "','"+thesisid+"')\n" +
+                         "INSERT INTO " + tablegroupstudent + "( student_id, group_name) VALUES('" + studentid + "', '" + groupname + "')\n" +
+                         "INSERT INTO " + tableIfo + "(thesis_id, teacher_id, group_name) VALUES('" + thesisid + "', '" + teacherid + "', '" + groupname + "')\n" +
+                         "INSERT INTO " + tablenotificate + " VALUES ('" + studentid + "','" + teacherid + "'," + "TRY_CONVERT(DATETIME, '" + date.ToString() + "', 103)" +
+                         ",'Teacher agree your register in" + thesisid + " at group" + groupname + "')";
+                    return db.QueryCanbeRollback(sqlString, CommandType.Text, ref error);
+                }
+            } catch (Exception ex) { error = ex.ToString(); }
+            return false;
         }
-        public bool AgreeThesis(string thesisid, string teacherid, string studentid, ref string error)
+        public bool RejectThesis(string thesisid, string teacherid, string studentid,string groupname, ref string error)
         {
             DateTime date = DateTime.Now;
-            string sqlString = 
-                "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid +"' And student_id='"+studentid+ "'\n" +
-                 "INSERT INTO " + tableIfo + "(thesis_id, teacher_id, student_id) VALUES('" + thesisid + "', '" + teacherid + "', '" + studentid + "')\n" +
-                 "INSERT INTO " + tablenotificate + " VALUES ('" + studentid + "','" + teacherid + "'," + "TRY_CONVERT(DATETIME, '" +date.ToString()+"', 102)" + ",'Teacher agree your register in" + thesisid + "')";
-            return db.QueryCanbeRollback(sqlString,CommandType.Text,ref error);
-        }
-        public bool RejectThesis(string thesisid, string teacherid, string studentid, ref string error)
-        {
-            DateTime date = DateTime.Now;
-            string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid + "'\n" +
-                 "INSERT INTO " + tablenotificate + " VALUES ('" + studentid + "','" + teacherid + "'," + "TRY_CONVERT(DATETIME, '" + date.ToString() + "', 102)" + ",'Teacher agree your register in" + thesisid + "')";
+            string sqlString = "DELETE FROM " + tablename + " WHERE thesis_id = '" + thesisid+"' And student_id='" + studentid + "' And group_id='" + groupname+ "'\n" +
+                 "INSERT INTO " + tablenotificate + " VALUES ('" + studentid + "','" + teacherid + "'," + "TRY_CONVERT(DATETIME, '" + date.ToString() + "', 103)" + 
+                 ",'Teacher Reject your register in " + thesisid + " at group "+ groupname + "')";
             return db.QueryCanbeRollback(sqlString,CommandType.Text,ref error);
         }
     }

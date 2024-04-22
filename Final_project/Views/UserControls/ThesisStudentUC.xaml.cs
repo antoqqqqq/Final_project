@@ -40,27 +40,24 @@ namespace Final_project.Views.UserControls
             if (dgrThesis.SelectedItem != null)
             {
                 var selectedItem = dgrThesis.SelectedItem as DataRowView;
-                Register_Thesis register_Thesis = new Register_Thesis(Studentid);
-                register_Thesis.InputThesisUC.txtThesisID.Text = selectedItem.Row.ItemArray[0].ToString();//get information
-                register_Thesis.InputThesisUC.txtThesisname.Text = selectedItem.Row.ItemArray[1].ToString();//get information
-                register_Thesis.InputThesisUC.txtteacher.Text = selectedItem.Row.ItemArray[2].ToString();//get information
-                register_Thesis.InputThesisUC.cbbCategory.Text = selectedItem.Row.ItemArray[3].ToString();//get information
-                register_Thesis.InputThesisUC.txtTechnology.Text = selectedItem.Row.ItemArray[4].ToString();//get information
-                register_Thesis.InputThesisUC.txtNumberofpartner.Text = selectedItem.Row.ItemArray[5].ToString();//get information
-                register_Thesis.InputThesisUC.txtRequire.Text = selectedItem.Row.ItemArray[6].ToString();//get information
-                register_Thesis.InputThesisUC.txtFunction.Text = selectedItem.Row.ItemArray[7].ToString();//get information
-                register_Thesis.InputThesisUC.txtThesisID.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtThesisname.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtteacher.IsReadOnly = true;
-                register_Thesis.InputThesisUC.cbbCategory.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtTechnology.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtNumberofpartner.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtRequire.IsReadOnly = true;
-                register_Thesis.InputThesisUC.txtFunction.IsReadOnly = true;
-                register_Thesis.ShowDialog();
+                InspectGroup GroupShow = new InspectGroup(Studentid, selectedItem.Row.ItemArray[0].ToString());
+                GroupShow.txtThesisID.Text = selectedItem.Row.ItemArray[0].ToString();//get information
+                GroupShow.txtThesisname.Text = selectedItem.Row.ItemArray[1].ToString();//get information
+                GroupShow.txtteacher.Text = selectedItem.Row.ItemArray[2].ToString();//get information
+                GroupShow.cbbCategory.Text = selectedItem.Row.ItemArray[3].ToString();//get information
+                GroupShow.txtTechnology.Text = selectedItem.Row.ItemArray[4].ToString();//get information
+                GroupShow.txtNumberofpartner.Text = selectedItem.Row.ItemArray[5].ToString();//get information
+                GroupShow.txtThesisID.IsReadOnly = true;
+                GroupShow.txtThesisname.IsReadOnly = true;
+                GroupShow.txtteacher.IsReadOnly = true;
+                GroupShow.cbbCategory.IsReadOnly = true;
+                GroupShow.txtTechnology.IsReadOnly = true;
+                GroupShow.txtNumberofpartner.IsReadOnly = true;
+                GroupShow.ShowDialog();
             }
             else { MessageBox.Show("select thesis want to change"); }
         }
+
 
         //private void btnforward_Click(object sender, RoutedEventArgs e)
         //{

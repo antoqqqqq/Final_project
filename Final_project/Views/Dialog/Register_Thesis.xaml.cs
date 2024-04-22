@@ -37,14 +37,21 @@ namespace Final_project.Views.Dialog
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (db.addNewRow(InputThesisUC.txtThesisID.Text,InputThesisUC.txtteacher.Text,studentID,ref error))
+            
+            if (db.addNewRow(txtThesisID.Text,txtteacher.Text, studentID, txtGroupName.Text,ref error))
             {
                 MessageBox.Show("register Thesis success");
+                this.Close();
             } else { MessageBox.Show(error); }
         }
         private void initialControl()
         {
             
+        }
+
+        private void Window_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
         }
     }
 }

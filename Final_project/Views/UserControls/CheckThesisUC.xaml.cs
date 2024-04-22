@@ -23,12 +23,12 @@ namespace Final_project.Views.UserControls
     public partial class CheckThesisUC : UserControl
     {
         public string teacherid = string.Empty;
+        string error =string.Empty;
         BL_CheckThesisUC db = new BL_CheckThesisUC(); 
         BL_ThesisTeacherUC bL_ThesisTeacherUC = new BL_ThesisTeacherUC();
         public CheckThesisUC()
         {
             InitializeComponent();
-            dgrThesisinfo.ItemsSource = db.getThesisDuring().DefaultView;
             foreach (var item in bL_ThesisTeacherUC.getCategory())
             {
                 cbbcategory.Items.Add(item);
@@ -39,7 +39,7 @@ namespace Final_project.Views.UserControls
         {
             CheckThesisDialog checkThesisDialog = new CheckThesisDialog(teacherid);
             checkThesisDialog.ShowDialog();
-            dgrThesisinfo.ItemsSource = db.getThesisDuring().DefaultView;
+            dgrThesisinfo.ItemsSource = db.getThesisDuring(teacherid).DefaultView;
         }
 
         private void btnCreateTaskThesis_Click(object sender, RoutedEventArgs e)
@@ -51,6 +51,11 @@ namespace Final_project.Views.UserControls
         private void btnCheckMeetingThesis_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            dgrThesisinfo.ItemsSource = db.getThesisDuring(teacherid).DefaultView;
         }
     }
 }

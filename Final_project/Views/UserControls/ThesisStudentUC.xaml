@@ -38,7 +38,7 @@
                 </Grid>
                 <Grid Grid.Column="1" HorizontalAlignment="Right">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <TextBox Grid.Column="2"
                                      Name="txtSearchThesis"
                                      Margin="10 0"
@@ -53,23 +53,6 @@
                                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                                       materialDesign:HintAssist.FloatingOffset="0,-20"
                                       Width="200" Height="50"/>
-                        </StackPanel>
-                        <StackPanel>
-
-                            <TextBox Grid.Column="2"
-                                     Name="txtSearchTeacher"
-                                     Margin="10 0"
-                                     materialDesign:HintAssist.Hint="Teacher"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     materialDesign:HintAssist.FloatingOffset="0,-20"
-                                     Width="200" Height="50" />
-                            <TextBox Grid.Column="2" 
-                                     Name="txtSearchTechnology"
-                                     Margin="10 5"
-                                     materialDesign:HintAssist.Hint="Technology"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     materialDesign:HintAssist.FloatingOffset="0,-20"
-                                     Width="200" Height="50"/>
                         </StackPanel>
                         <Button Name="btnsearch"
                                 Grid.Column="1"

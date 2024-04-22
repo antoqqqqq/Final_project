@@ -12,7 +12,7 @@ namespace Final_project.Ado_NET.DAO.UserControls
     {
         string tablename = "Thesis_info";
         string tableThesis = "Thesis";
-        string tablestudent = "Student";
+        string tablegroup = "groups";
 
         DBconnection db = new DBconnection();
         private string error = string.Empty;
@@ -21,11 +21,14 @@ namespace Final_project.Ado_NET.DAO.UserControls
         {
 
         }
-        public DataTable getThesisDuring()
+        public DataTable getThesisDuring( string teacherid)
         {
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = db.ExecuteQueryDataSet("select " + tablename + ".thesis_id," + tableThesis + ".topic," + tableThesis + ".category," + tablestudent + ".name ,"+ tablestudent + ".student_id " + "from " + tablename + " join " + tableThesis + " on " + tablename + ".thesis_id =" + tableThesis + ".thesis_id  join Student on "+tablename+".student_id = Student.student_id ", CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select " + tablename + ".thesis_id," + tableThesis + ".topic," + 
+                tableThesis + ".category," + tablename + ".group_name " +
+                "from " + tablename + " join " + tableThesis + " on " + tablename + ".thesis_id =" + tableThesis +
+                ".thesis_id  " + " where " + tablename + ".teacher_id='" + teacherid + "' ", CommandType.Text);
             dt = ds.Tables[0];
             return dt;
         }

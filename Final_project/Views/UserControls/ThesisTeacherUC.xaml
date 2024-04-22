@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Final_project.Views.UserControls.ThesisTeacherUC"
+﻿<UserControl x:Name="ThesisTeacherUC1" x:Class="Final_project.Views.UserControls.ThesisTeacherUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,7 +9,7 @@
              TextElement.FontSize="13"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
-             mc:Ignorable="d" Width="800" Height="450"
+             mc:Ignorable="d" Width="800" Height="450" IsVisibleChanged="ThesisTeacherUC1_IsVisibleChanged"
              >
     <Grid >
         <Grid.RowDefinitions>
@@ -55,8 +55,7 @@
                 </Grid>
                 <Grid Grid.Column="1" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel>
-
+                        <StackPanel Orientation="Horizontal">
                             <TextBox Grid.Column="2" 
                                      Name="txtSearchThesisName"
                                      Margin="10 0"
@@ -72,23 +71,6 @@
                                       materialDesign:HintAssist.FloatingOffset="0,-20"
                                       Width="200" Height="50"/>
                         </StackPanel>
-                        <StackPanel>
-
-                            <TextBox Grid.Column="2" 
-                                     Name="txtTeacher"
-                                     Margin="10 0"
-                                     materialDesign:HintAssist.Hint="Teacher"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     materialDesign:HintAssist.FloatingOffset="0,-20"
-                                     Width="200" Height="50" />
-                            <TextBox Grid.Column="2" 
-                                     Name="txtTechnology"
-                                     Margin="10 5"
-                                     materialDesign:HintAssist.Hint="Technology"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     materialDesign:HintAssist.FloatingOffset="0,-20"
-                                     Width="200" Height="50"/>
-                        </StackPanel>
                         <Button Name="btnsearch"
                                 Grid.Column="1"
                                 Height="35"
@@ -103,14 +85,12 @@
             </Grid>
         </Border>
         <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
-            <DataGrid Name="dgrThesis"         
-                      CanUserAddRows="False"
+            <DataGrid Name="dgrThesis" 
+                      IsReadOnly="True"
                       Background="White"
                       Margin="5,5,0,0"
                       HorizontalAlignment="Left"
-                      VerticalAlignment="Top" Height="323" Width="785">
-
-            </DataGrid>
+                      VerticalAlignment="Top" Height="323" Width="785"/>
 
         </Border>
 

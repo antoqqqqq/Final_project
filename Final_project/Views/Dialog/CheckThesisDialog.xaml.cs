@@ -44,7 +44,7 @@ namespace Final_project.Views.Dialog
             if (dgrThesis.SelectedItem != null)
             {
                 var selectedItem = dgrThesis.SelectedItem as DataRowView;
-                if(!db.AgreeThesis(selectedItem[0].ToString(), teacher, selectedItem[4].ToString(), ref error)){
+                if(!db.AgreeThesis(selectedItem[0].ToString(), teacher, selectedItem[3].ToString(), selectedItem[4].ToString(), ref error)){
                     MessageBox.Show(error);
                 }
             }
@@ -58,7 +58,7 @@ namespace Final_project.Views.Dialog
                 if (dgrThesis.SelectedItem != null)
                 {
                     var selectedItem = dgrThesis.SelectedItem as DataRowView;
-                    if (!db.RejectThesis(selectedItem[0].ToString(), teacher, selectedItem[4].ToString(), ref error))
+                    if (!db.RejectThesis(selectedItem[0].ToString(), teacher, selectedItem[3].ToString(), selectedItem[4].ToString(), ref error))
                     {
                         MessageBox.Show(error);
                     }

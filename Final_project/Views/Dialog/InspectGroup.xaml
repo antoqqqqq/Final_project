@@ -1,0 +1,148 @@
+﻿<Window x:Class="Final_project.Views.Dialog.InspectGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_project.Views.Dialog"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             mc:Ignorable="d" Width="800" Height="450" >
+    <Border Background="White" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnClose"
+                            Margin="10"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Height="30"
+                            Width="30"
+                            Foreground="Teal"
+                            Style="{StaticResource MaterialDesignIconButton}"
+                            ToolTip="Thoát" Click="Closebtn_Click" >
+                        <materialDesign:PackIcon Kind="Close" Width="20" Height="20"/>
+                    </Button>
+                    <Grid Grid.Column="0">
+                        <StackPanel Orientation="Horizontal" >
+
+                            <Button Name="btnThesis_Register"
+                                Height="35"
+                                Width="60"
+                                Margin="20 0 0 0"
+                                HorizontalAlignment="Left"
+                                Background="ForestGreen"                      
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                ToolTip="Register" Click="btnThesis_Register_Click">
+                                <materialDesign:PackIcon Kind="BookCheck" Height="25" Width="30" />
+                            </Button>
+                            <Button Name="btnThesis_CreateGroup"
+                                Height="35"
+                                Width="60"
+                                Margin="20 0 0 0"
+                                HorizontalAlignment="Left"
+                                Background="ForestGreen"                      
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                ToolTip="Register" Click="btnThesis_CreateGroup_Click">
+                                <materialDesign:PackIcon Kind="PeopleGroup" Height="25" Width="30" />
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBox Name="txtThesisID" 
+                             Margin="5 5 5 20"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             MaxLength="10"
+                             materialDesign:HintAssist.Hint="Thesis ID"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             VerticalScrollBarVisibility="Auto"
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+
+                        <TextBox Name="txtThesisname"
+                             Margin="5 5 5 20"
+                             Grid.Row="0" 
+                             Grid.Column="1"
+                             MaxLength="100"
+                             materialDesign:HintAssist.Hint="Thesis name"
+                             AcceptsReturn="False"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto" 
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="txtteacher"
+                             Margin="5 5 5 20"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             MaxLength="12"
+                             materialDesign:HintAssist.Hint="Teacher "
+                             AcceptsReturn="False"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto" 
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="cbbCategory"
+                              Grid.Row="1" Margin="5 5 5 20"
+                              Grid.Column="1"
+                              materialDesign:HintAssist.Hint="Category"
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                              materialDesign:HintAssist.FloatingOffset="0,-22" >
+
+                        </TextBox>
+                        <TextBox Name="txtTechnology"
+                             Margin="5 5 5 20"
+                             
+                             
+                             Grid.Row="2"
+                             Grid.Column="0"
+                             MaxLength="255"
+                             materialDesign:HintAssist.Hint="Technology"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto" 
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="txtNumberofpartner"
+                             Margin="5 5 5 20"
+                             
+                             Grid.Row="2"
+                             Grid.Column="1"
+                             MaxLength="255"
+                             materialDesign:HintAssist.Hint="Number"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto" 
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <DataGrid  
+                    Name="dgrThesis"
+                    CanUserAddRows="False"
+                    Background="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Height="177" Width="780"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

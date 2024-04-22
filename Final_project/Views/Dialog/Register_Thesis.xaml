@@ -12,9 +12,9 @@
         AllowsTransparency="True"
         ResizeMode="NoResize"
         FontFamily="{DynamicResource MaterialDesingFont}" >
-    <Border  CornerRadius="10 10 10 10" Background="White">
+    <Border  CornerRadius="10 10 10 10" Background="White" ScrollViewer.CanContentScroll="True">
         <Grid Margin="10">
-            <StackPanel >
+            <StackPanel Grid.ColumnSpan="2" >
                 <Button Name="btnClose"
                         Margin="10"
                         HorizontalAlignment="Right"
@@ -32,7 +32,99 @@
                     Foreground="Teal"
                     HorizontalAlignment="Center"
                     Text="Register Thesis"/>
-                <uc:InputThesisUC x:Name="InputThesisUC"></uc:InputThesisUC>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBox Name="txtThesisID" 
+                                 Margin="5 5 5 20"
+                                 Grid.Row="0"
+                                 Grid.Column="0"
+                                 MaxLength="10"
+                                 materialDesign:HintAssist.Hint="Thesis ID"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 VerticalScrollBarVisibility="Auto"
+                                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+
+                        <TextBox Name="txtThesisname"
+                                 Margin="5 5 5 20"
+                                 Grid.Row="0" 
+                                 Grid.Column="1"
+                                 MaxLength="100"
+                                 materialDesign:HintAssist.Hint="Thesis name"
+                                 AcceptsReturn="False"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto" 
+                                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="txtteacher"
+                                 Margin="5 5 5 20"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 MaxLength="12"
+                                 materialDesign:HintAssist.Hint="Teacher "
+                                 AcceptsReturn="False"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto" 
+                                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="cbbCategory"
+                                 Margin="5 5 5 20"                                 
+                                 Grid.Row="1"
+                                 Grid.Column="1"
+                                 materialDesign:HintAssist.Hint="Category"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 materialDesign:HintAssist.FloatingOffset="0,-22" >
+
+                        </TextBox>
+                        <TextBox Name="txtTechnology"
+                                 Margin="5 5 5 20"
+                                 
+                                 
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 MaxLength="255"
+                                 materialDesign:HintAssist.Hint="Technology"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto" 
+                                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                        <TextBox Name="txtNumberofpartner"
+                                 Margin="5 5 5 20"
+                                 
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 MaxLength="255"
+                                 materialDesign:HintAssist.Hint="Number"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto" 
+                                 materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                    </Grid>
+                    <TextBox Name="txtGroupName" Grid.Row="1"
+                             Margin="5 5 5 20"
+                             MaxLength="10"
+                             materialDesign:HintAssist.Hint="Group name"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             VerticalScrollBarVisibility="Auto"
+                             materialDesign:HintAssist.FloatingOffset="0,-22"/>
+                </Grid>
+                <DataGrid  
+                    Name="dgrThesis"
+                    CanUserAddRows="False"
+                    Background="White"
+                    HorizontalAlignment="Center" Height="166" Width="871"/>
                 <Button Name="btnRegister"
                         HorizontalAlignment="Center"
                         Width="100"
@@ -45,3 +137,4 @@
         </Grid>
     </Border>
 </Window>
+    

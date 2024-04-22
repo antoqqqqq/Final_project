@@ -5,6 +5,7 @@ using MaterialDesignThemes.Wpf;
 using static MaterialDesignThemes.Wpf.Theme;
 using System.Data;
 using System.Windows;
+using System;
 
 namespace Final_project.Views.UserControls
 {
@@ -15,15 +16,20 @@ namespace Final_project.Views.UserControls
     {
         BL_ThesisTeacherUC bL_ThesisTeacherUC = new BL_ThesisTeacherUC();
         private string err=string.Empty;
+        public string teacherid = string.Empty;
 
         public ThesisTeacherUC()
         {
             InitializeComponent();
-            dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis().DefaultView;
-            foreach (var item in bL_ThesisTeacherUC.getCategory())
+            try
             {
-                cbbsearchCategory.Items.Add(item);
-            }
+                if (teacherid != null) { dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis(teacherid).DefaultView; }
+                foreach (var item in bL_ThesisTeacherUC.getCategory())
+                {
+                    cbbsearchCategory.Items.Add(item);
+                }
+            } catch (Exception ) { }
+
         }
 
 
@@ -81,8 +87,12 @@ namespace Final_project.Views.UserControls
         }
         private void initialcontrol()
         {
-            dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis().DefaultView;
+            dgrThesis.ItemsSource = bL_ThesisTeacherUC.getThesis(teacherid).DefaultView;
+        }
 
+        private void ThesisTeacherUC1_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            initialcontrol();
         }
     }
 }

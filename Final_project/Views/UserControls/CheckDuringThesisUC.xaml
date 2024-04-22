@@ -97,21 +97,10 @@
 
         </Border>
         <Border Grid.Row="1" CornerRadius="0 0 10 0" Background="White">
-            <DataGrid
+            <DataGrid Name="dgrthesisinfo"
                 CanUserAddRows="False"
-                AutoGenerateColumns="False"
-                Margin="5"
-                ItemsSource="{Binding SearchedEmployees}"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Thesis ID" IsReadOnly="True" Binding="{Binding ID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Thesis Name" IsReadOnly="True" Binding="{Binding Name}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Leader ID" IsReadOnly="True" Binding="{Binding LeaderID}" CanUserResize="False" Width="*" />
-                    <DataGridTextColumn Header="Due day" IsReadOnly="True" Binding="{Binding Dueday, StringFormat='dd/MM/yyyy'}" CanUserResize="False" Width="*"  />
-
-                </DataGrid.Columns>
-            </DataGrid>
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" Height="318" Width="780"/>
         </Border>
     </Grid>
 </UserControl>

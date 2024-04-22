@@ -83,6 +83,28 @@ namespace Final_project.DBConnection
             }
             return f;
         }
+        public int QueryCheckexist(string strSQL, CommandType ct, ref string error)
+        {
+            int count=-1;
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                count = (int)comm.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return count;
+        }
         public string Getparameter(string query,string parametername, CommandType ct, ref string error)
         {
             string parameter = string.Empty;

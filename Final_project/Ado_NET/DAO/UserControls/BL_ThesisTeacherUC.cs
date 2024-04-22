@@ -22,15 +22,19 @@ namespace Final_project.Ado_NET.DAO.UserControls
         string role = "role_";
         DBconnection db = new DBconnection();
         private string error =string.Empty;
+        private string teacherid = "teacher_id";
+        private string tablename0 ="Teacher";
+        private string studentid="student_id";
+        private string tablename1="Student";
 
         public BL_ThesisTeacherUC() {
             
         }
-        public DataTable getThesis()
+        public DataTable getThesis(string teacherid)
         {
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = db.ExecuteQueryDataSet("select * from " + tablename, CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet("select * from " + tablename+ " where "+tablename+".teacher_id='"+teacherid+"'", CommandType.Text);
             dt = ds.Tables[0];
             return dt;
         }        
@@ -38,6 +42,19 @@ namespace Final_project.Ado_NET.DAO.UserControls
         {
             List<string> list = db.GetColumn("select * from " + category, "category", CommandType.Text, ref error);
             return list;
+        }
+        public string getid(string username, int role, ref string error)
+        {
+            if (role == 0)
+            {
+                string query = "SELECT " + teacherid + " FROM " + tablename0 + " WHERE " + primarycl + " = '" + username + "'";
+                return db.Getparameter(query, teacherid, CommandType.Text, ref error);
+            }
+            else
+            {
+                string query = "SELECT " + studentid + " FROM " + tablename1 + " WHERE " + primarycl + " = '" + username + "'";
+                return db.Getparameter(query, studentid, CommandType.Text, ref error);
+            }
         }
         public bool deleteThesis(string thesisid,ref string error)
         {
